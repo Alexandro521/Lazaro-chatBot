@@ -15,8 +15,16 @@ dependencies:
     specifier: ^0.12.0
     version: 0.12.0
   whatsapp-web.js:
-    specifier: github:pedroslopez/whatsapp-web.js#67d305be
-    version: github.com/pedroslopez/whatsapp-web.js/67d305be
+    specifier: github:pedroslopez/whatsapp-web.js#58fc39f9
+    version: github.com/pedroslopez/whatsapp-web.js/58fc39f9
+
+devDependencies:
+  '@types/node':
+    specifier: ^22.7.4
+    version: 22.7.4
+  typescript:
+    specifier: ^5.6.2
+    version: 5.6.2
 
 packages:
 
@@ -24,13 +32,10 @@ packages:
     resolution: {integrity: sha512-wtnBAETBVYZ9GvcbgdswRVSLkFkYAGv1KzwBBTeRXvGT9sb9cPllOgFFWXCn9PyARQ0H+Ijz6mmoRrGateUDxQ==}
     dev: false
 
-  /@types/node@20.12.7:
-    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
-    requiresBuild: true
+  /@types/node@22.7.4:
+    resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
     dependencies:
-      undici-types: 5.26.5
-    dev: false
-    optional: true
+      undici-types: 6.19.8
 
   /@types/node@8.10.66:
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
@@ -40,7 +45,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 22.7.4
     dev: false
     optional: true
 
@@ -605,6 +610,7 @@ packages:
   /fstream@1.0.12:
     resolution: {integrity: sha512-WvJ193OHa0GHPEL+AycEJgxvBEwyfRkN1vhjca23OaPVMCaLCXTd5qAu82AjTcgP1UJmytkOKb63Ypde7raDIg==}
     engines: {node: '>=0.6'}
+    deprecated: This package is no longer supported.
     requiresBuild: true
     dependencies:
       graceful-fs: 4.2.11
@@ -1128,7 +1134,7 @@ packages:
   /puppeteer@13.7.0:
     resolution: {integrity: sha512-U1uufzBjz3+PkpCxFrWzh4OrMIdIb2ztzCu0YEPfRHjHswcSwHZswnK+WdsOQJsRV8WeTg3jLhJR4D867+fjsA==}
     engines: {node: '>=10.18.1'}
-    deprecated: < 21.8.0 is no longer supported
+    deprecated: < 22.8.2 is no longer supported
     requiresBuild: true
     dependencies:
       cross-fetch: 3.1.5
@@ -1247,6 +1253,7 @@ packages:
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
     dependencies:
       glob: 7.2.3
@@ -1447,6 +1454,12 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: false
 
+  /typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
   /unbzip2-stream@1.4.3:
     resolution: {integrity: sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg==}
     dependencies:
@@ -1454,11 +1467,8 @@ packages:
       through: 2.3.8
     dev: false
 
-  /undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-    requiresBuild: true
-    dev: false
-    optional: true
+  /undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -1576,10 +1586,10 @@ packages:
     dev: false
     optional: true
 
-  github.com/pedroslopez/whatsapp-web.js/67d305be:
-    resolution: {tarball: https://codeload.github.com/pedroslopez/whatsapp-web.js/tar.gz/67d305be}
+  github.com/pedroslopez/whatsapp-web.js/58fc39f9:
+    resolution: {tarball: https://codeload.github.com/pedroslopez/whatsapp-web.js/tar.gz/58fc39f9}
     name: whatsapp-web.js
-    version: 1.22.2-alpha.3
+    version: 1.23.1-alpha.0
     engines: {node: '>=12.0.0'}
     dependencies:
       '@pedroslopez/moduleraid': 5.0.2

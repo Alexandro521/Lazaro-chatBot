@@ -1,0 +1,2 @@
+export type groupList = string[];
+
