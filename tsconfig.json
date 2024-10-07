@@ -1,12 +1,15 @@
-/// <reference types="whatsapp-web.js" />
+
 {
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+   "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strict": false,
     "esModuleInterop": true,
+   
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["./node_modules/@types"]    
   },

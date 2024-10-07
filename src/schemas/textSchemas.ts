@@ -1,3 +1,4 @@
+import type{ mangaHeaderInfo } from "../interfaces/mangaHeaderInfo"
 export const schemas = {
  menu:{   
     img : "./public/lazaro.jpg",
@@ -125,7 +126,7 @@ export const schemas = {
     Fuente Lázaro 🤖
     -----`
  },
- mangaHeaderInfo: ({element})=>{
+ mangaHeaderInfo: ({element}:{element:mangaHeaderInfo})=>{
  return ( `
 class-nvi
  🖋    *titulo:* ${element.title}
