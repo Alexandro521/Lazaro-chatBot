@@ -1,19 +1,21 @@
 import axios from "axios";
-import  { Message } from "whatsapp-web.js";
+
 import { client } from "../../index";
 import { schemas } from "../../schemas/textSchemas";
 import { mangaHeaderInfo } from "../../interfaces/mangaHeaderInfo";
-import { MessageMedia } from "whatsapp-web.js";
+import { MessageMedia,Message,GroupChat} from "whatsapp-web.js";
 export class Commands{
  
 
   static  async botOn(text:string,Message:Message){
-        client.sendMessage(Message.from,text)
+       await client.sendMessage(Message.from,text)
+       return
     }
    static async StickerCreate(Message:Message){
 
-        if(Message.hasMedia){
+        if(!Message.hasMedia){
             await Message.reply('🤖 Debes enviar una imagen para que funcione el comando')
+            return
         }
 
         const media =  await Message.downloadMedia();
@@ -27,19 +29,21 @@ export class Commands{
                 await client.sendMessage(Message.from, 'No se pudo procesar el sticker');
                 return;
             });
+            return
     }
-   /* async _testName(){
-        console.log(`menssage: ${this.Message}`)
+    //todo: Funciom pendiente a refactorizar{
+   static async _testName(Message:Message){
+        console.log(`menssage: ${Message}`)
     
-        if(!this.Message.hasQuotedMsg){
+        if(!Message.hasQuotedMsg){
             return
         }        
-        let responseMsg = await this.Message.getQuotedMessage()
+        let responseMsg = await Message.getQuotedMessage()
 
         if (!responseMsg.id.fromMe){
                 return
             }
-        const searchText = this.Message.body.match( /#(.+)/);
+        const searchText = Message.body.match( /#(.+)/);
         const textLength = searchText?.length > 1
 
         if (!searchText && !textLength) {
@@ -47,14 +51,14 @@ export class Commands{
         }
 
         const number = Number.parseInt(searchText[1].trim())
-        this.Message.reply(`buscando ${number}...`,this.Message.from)
+       await Message.reply(`buscando ${number}...`,Message.from)
                
-        const text =  this.Message.body
+        const text =  Message.body
 
         console.log(text)
         if (text.includes("class-nvs")) {
 
-            this.Message.react("📕");
+            await Message.react("📕");
             console.log(text);
             const list = text.split("⭐");
             console.log(list);
@@ -89,9 +93,9 @@ export class Commands{
             const media = await MessageMedia.fromUrl(mangaData.img, {
                 unsafeMime: true,
             });
-            this.Message.reply(
+            await Message.reply(
                 media,
-                this.Message.from,{
+                await Message.from,{
                     caption:`
         ${headerText}
         ${chapterList}
@@ -101,33 +105,31 @@ export class Commands{
             Message.react("📖");
             const list = text.split("🆔");
             console.log(list);
-            const searchID = list[number].match(rege);
+            const searchID = list[number].match(/\[.+\]/g);
             console.log(searchID);
             const id = searchID[0]
                 .replace("[", "")
                 .replace("]", "")
                 .trim();
             console.log(id);
-            Message.react("📥");
+           await Message.react("📥");
 
-            sendReply(
+           await Message.reply(
                 "descaragando pdf de " +
                 id +
-                " 📄 Antes de enviar el PDF, queremos informarte de que el proceso puede tardar entre 1 y 2 minutos. Por favor, ten paciencia durante este tiempo. Si después de esperar este período no recibes nada, por favor inténtalo de nuevo. ¡Gracias por tu comprensión! 🕒"
+                " 📄 Antes de enviar el PDF, queremos informarte de que el proceso puede tardar entre 1 y 2 minutos. Por favor, ten paciencia durante este tiempo. Si después de esperar este período no recibes nada, por favor inténtalo de nuevo. ¡Gracias por tu comprensión! 🕒",Message.from
             );
 
             const media = await MessageMedia.fromUrl(
                 `http://localhost:1024/services/pdf/${id}`,
-                { unsafeMime: true, sendAsDocument: true }
+                { unsafeMime: true }
             );
 
-            sendReply("Archivo descargado con !exito, Enviando...");
+            await Message.reply("Archivo descargado con !exito, Enviando...",Message.from);
 
             Message.react("📤");
 
-            await client.sendMessage(Message.from, media, {
-                sendAsDocument: true,
-            });
+            await client.sendMessage(Message.from, media);
         } else if (text.includes("class-yts")) {
             const list = text.split("📺");
             const select = list[number].match(/\{.+\}/g);
@@ -135,19 +137,95 @@ export class Commands{
                 .replace("{", "")
                 .replace("}", "")
                 .trim();
-            sendReply(
-                `🤖Porfavor espere un momento mientras s  e descarga su audio...`
+            await Message.reply(
+                `🤖Porfavor espere un momento mientras s  e descarga su audio...`,
+                Message.from
             );
             const Audio = await MessageMedia.fromUrl(
                 "http://localhost:1024/services/ytmp3?ytdLink=" + id,
                 { unsafeMime: true }
             );
-            sendReply(Audio);
-            sendReply("Archivo descargado Exitosamente!");
+            await Message.reply(Audio,Message.from);
+            await Message.reply("Archivo descargado Exitosamente!",Message.from);
         }
 
 
-
+        return
         }
-    */
+    //todo: }
+    static async main(Message:Message){
+        try{
+        await Message.react('📜')
+    
+        const media = await MessageMedia.fromFilePath("../../../public/lazaro.jpg");
+        await Message.reply(media,Message.from,{caption:schemas.menu.text})
+        }catch(error){
+            console.log(error)
+        }
+    }
+    static async Everyone(Message:Message){
+        try{
+        await Message.react('🗣')
+        const chat:GroupChat = await Message.getChat()
+        if(!chat.isGroup){
+            Message.reply('Este comando solo puede ser usado enviado en grupos',Message.from)
+        }
+        let text = '';
+        let mentions = [];
+        for (let participant of chat.participants) {
+            mentions.push(`${participant.id.user}@c.us`);
+            text += `@${participant.id.user}/n `;
+        }
+        await client.sendMessage(Message.from,text, { mentions });
+        }catch(error){
+            console.log(error)
+        }
+    }
+    static async test_gay(message:Message){{
+        try {
+            message.react('🏳️‍🌈')
+    
+            const metionUser = await message.getMentions()
+            let randomNumber = Math.floor(Math.random() * 100)
+            const imgList = [
+                '../../../public/lo_suponia/Gay.jpg',
+                '../../../public/lo_suponia/gay2.jpg',
+                '../../../public/lo_suponia/gay3.jpg',
+                '../../../public/lo_suponia/gay4.jpeg',
+                '../../../public/lo_suponia/gay5.jpg'
+            ]//abierto a que se agreguen mas imagenes
+            let img = null
+
+            if (randomNumber < 70) {
+                img = imgList[Math.floor(Math.random() * 5 - 1)]
+
+            } else if (randomNumber > 70 && randomNumber < 90) {
+
+                img = '../../../public/lo_suponia/lo_ultra_suponia.jpeg'
+
+            } else if (randomNumber > 90) {
+
+                img = '../../../public/lo_suponia/lo_ultra_mega_suponia.jpeg'
+
+            }
+            const media = await MessageMedia.fromFilePath(img);
+            if (!metionUser[0]) {
+                const user = await message.getContact();
+                const text = `@${user.id.user} es ${randomNumber}% homosexual 🏳️‍🌈🏳️‍🌈🏳️‍🌈 `;
+                await client.sendMessage(message.from, media, {
+                    caption: text,
+                    mentions: [`${user.id.user}@c.us`]
+                });
+            } else {
+                const text = `@${metionUser[0].id.user} es ${randomNumber}% homosexual 🏳️‍🌈🏳️‍🌈🏳️‍🌈 `
+                client.sendMessage(message.from, media, {
+                    caption: text,
+                    mentions: [`${metionUser[0].id.user}@c.us`]
+                });
+            }
+        } catch (error) {
+            console.log(error)
+        }}
+    }
+
 }

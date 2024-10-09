@@ -98,16 +98,7 @@ static    async MessageRevokeEveryone(after:Message,before:Message){
 
             const msg = message.body
             console.log(msg)
-            // function sendMsg(Msg:string) {
-            //     client.sendMessage(message.from, Msg)
-            // }
-            // function sendReply(Msg:string, title = '') {
-            //     message.reply(Msg, message.from, {
-            //         caption: title, extra: {
-            //             hd: true
-            //         }
-            //     });
-            // }
+
             if (msg === '!bot on') {
                  await Commands.botOn("Hola mundo",message)
             }
@@ -115,67 +106,26 @@ static    async MessageRevokeEveryone(after:Message,before:Message){
 
                  await Commands.StickerCreate(message)
             }
-
             else if (msg.startsWith("#")) {
-                //await Commands._testName()
+                await Commands._testName(message)
                 console.log("hola")
             }
             else if (msg === '!bot off') {
                 Commands.botOn('Adios mundo cruel 😩',message)
             }
-        /*    else if (msg === '!menu') {
-                message.react('📜')
-    
-                const media = await MessageMedia.fromFilePath(schemas.menu.img)
-                sendReply(media, schemas.menu.text)
+            else if (msg === '!menu') {
+                Commands.main(message)
             }
+            
             else if (msg === '!everyone') {
-                message.react('🗣')
-                const chat = await message.getChat();
-                let text = '';
-                let mentions = [];
-                for (let participant of chat.participants) {
-                    mentions.push(`${participant.id.user}@c.us`);
-                    text += `@${participant.id.user}/n `;
-                }
-                await chat.sendMessage(text, { mentions });
+               Commands.Everyone(message)
             }
             else if (msg.startsWith('!test_gay')) {
-                message.react('🏳️‍🌈')
-    
-                const metionUser = await message.getMentions()
-                let randomNumber = Math.floor(Math.random() * 100)
-                const imgList = [
-                    './public/lo_suponia/Gay.jpg',
-                    './public/lo_suponia/gay2.jpg',
-                    './public/lo_suponia/gay3.jpg',
-                    './public/lo_suponia/gay4.jpeg',
-                    './public/lo_suponia/gay5.jpg'
-                ]//abierto a que se agreguen mas imagenes
-                let img = null
-                if (randomNumber < 70) {
-                    img = imgList[Math.floor(Math.random() * 5 - 1)]
-                } else if (randomNumber > 70 && randomNumber < 90) {
-                    img = './public/lo_suponia/lo_ultra_suponia.jpeg'
-                } else if (randomNumber > 90) {
-                    img = './public/lo_suponia/lo_ultra_mega_suponia.jpeg'
-                }
-                const media = await MessageMedia.fromFilePath(img);
-                if (!metionUser[0]) {
-                    const user = await message.getContact();
-                    const text = `@${user.id.user} es ${randomNumber}% homosexual 🏳️‍🌈🏳️‍🌈🏳️‍🌈 `;
-                    this.Client.sendMessage(message.from, media, {
-                        caption: text,
-                        mentions: [`${user.id.user}@c.us`]
-                    });
-                } else {
-                    const text = `@${metionUser[0].id.user} es ${randomNumber}% homosexual 🏳️‍🌈🏳️‍🌈🏳️‍🌈 `
-                    this.Client.sendMessage(message.from, media, {
-                        caption: text,
-                        mentions: [`${metionUser[0].id.user}@c.us`]
-                    });
-                }
+                 Commands.test_gay(message)
             }
+        /*   
+
+            
             else if (msg.startsWith('!yts')) {
     
                 const expresionRegular = /!yts(.+)/;

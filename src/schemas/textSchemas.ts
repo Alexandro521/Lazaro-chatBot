@@ -1,7 +1,7 @@
 import type{ mangaHeaderInfo } from "../interfaces/mangaHeaderInfo"
 export const schemas = {
  menu:{   
-    img : "./public/lazaro.jpg",
+    img : "../../public/lazaro.jpg",
 
     text: `🤖 *¡Bienvenido a Lázaro bot, version Alpha 1.8*
 
