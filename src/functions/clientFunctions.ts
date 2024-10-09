@@ -1,20 +1,15 @@
-import type { Client, GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
+import {GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
 import type { groupList } from "../types/types.ts";
+import { client}  from "../index";
 import {schemas} from '../schemas/textSchemas.js';
-import { commands } from "./commands/command";
+import { Commands } from "./commands/command";
 const qrcode = require('qrcode-terminal');
 //const groupsList = require("../data/groupsList")
 
 
 export  class clientFunc{
-    Client:Client;
-    constructor(Client:Client){
-        this.Client = Client;
-    }
-
-   
-
-    async Ready(){
+  
+     static async Ready(){
         console.log("Client is ready!");
 
         //const media = await MessageMedia.fromFilePath(schemas.botInit.img);
@@ -23,24 +18,24 @@ export  class clientFunc{
     
         /*const groupsIdList:groupList = await JSON.parse(groupsList)
 
-         //puesto de manera manual temporalmente
-        groupsIdList.forEach(async (groupID) => {
-            await this.Client.sendMessage(groupID, schemas.botInit.text);
-        });*/
+         //puesto de manera manual temporalmente */
+        //groupsIdList.forEach(async (groupID) => {
+            await client.sendMessage("120363183730817172@g.us", schemas.botInit.text);
+        //});
     }
-    Auth(){
+  static  Auth(){
     console.log('AUTHENTICATED');
     }
-    Loading(percent:string,message:string){
+  static  Loading(percent:string,message:string){
         console.log('LOADING SCREEN', percent, message);
     }
-    AuthError(error:string){
+  static  AuthError(error:string){
         console.log('AUTH ERROR', error);
     }
-    QR(qr:string){
+  static  QR(qr:string){
     qrcode.generate(qr, {small: true});
     }
-   async AdminChange(notification:GroupNotification){
+    static async AdminChange(notification:GroupNotification){
         const type:string = notification.type;
 
         if (type === "promote") {
@@ -50,27 +45,27 @@ export  class clientFunc{
             console.log(notification)
             console.log(`You were demoted by ${notification.author}`);
     }
-    async GroupUpdate(notification:GroupNotification){
+ static   async GroupUpdate(notification:GroupNotification){
         // Group picture, subject or description has been updated.
         console.log('update', notification);
     }
-    async GroupLeave (notification:GroupNotification) {
+static async GroupLeave (notification:GroupNotification) {
         // User has left or been kicked from the group.
         console.log('leave', notification);
         notification.reply('User left.');
         const c =await notification.getContact()
         console.log('--------------------')
-        const profile =await this.Client.getProfilePicUrl(notification.id+'@g.us')
+        const profile =await client.getProfilePicUrl(notification.id+'@g.us')
         console.log(profile)
         console.log(c)
     }
-    async GroupJoin (notification:GroupNotification) {
+ static   async GroupJoin (notification:GroupNotification) {
         console.log('join', notification);
         notification.reply('User joined.');
        const c =await notification.getContact()
 
     }
-    async MessageRevokeEveryone(after:Message,before:Message){
+static    async MessageRevokeEveryone(after:Message,before:Message){
 
         const chat = await before?.getChat()
         if(chat?.isGroup){
@@ -97,16 +92,15 @@ export  class clientFunc{
         
     }}
     }
-    async MessageCreate(message:Message){
+ static   async MessageCreate(message:Message){
         try {
-            const Commands = new commands(this.Client,message)
+           
 
             const msg = message.body
-
+            console.log(msg)
             // function sendMsg(Msg:string) {
             //     client.sendMessage(message.from, Msg)
             // }
-
             // function sendReply(Msg:string, title = '') {
             //     message.reply(Msg, message.from, {
             //         caption: title, extra: {
@@ -115,11 +109,11 @@ export  class clientFunc{
             //     });
             // }
             if (msg === '!bot on') {
-                 await Commands.botOn("Hola mundo")
+                 await Commands.botOn("Hola mundo",message)
             }
             else if (msg === "!sticker") {
 
-                 await Commands.StickerCreate()
+                 await Commands.StickerCreate(message)
             }
 
             else if (msg.startsWith("#")) {
@@ -127,7 +121,7 @@ export  class clientFunc{
                 console.log("hola")
             }
             else if (msg === '!bot off') {
-                Commands.botOn('Adios mundo cruel 😩')
+                Commands.botOn('Adios mundo cruel 😩',message)
             }
         /*    else if (msg === '!menu') {
                 message.react('📜')
@@ -801,7 +795,7 @@ export  class clientFunc{
             }*/
         } catch (error) {
             console.log(error)
-            this.Client.sendMessage(message.from, 'Ups ah ocurrido algo:' + error)
+            client.sendMessage(message.from, 'Ups ah ocurrido algo:' + error)
         }
     }
     }

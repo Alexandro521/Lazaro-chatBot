@@ -17,7 +17,7 @@
     "axios": "^1.7.7",
     "free-translate": "^0.6.1",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#b8560938"
+    "whatsapp-web.js": "^1.26.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",

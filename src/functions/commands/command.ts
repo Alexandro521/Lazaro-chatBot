@@ -1,49 +1,45 @@
 import axios from "axios";
-import type { Client, Message } from "whatsapp-web.js";
+import  { Message } from "whatsapp-web.js";
+import { client } from "../../index";
 import { schemas } from "../../schemas/textSchemas";
 import { mangaHeaderInfo } from "../../interfaces/mangaHeaderInfo";
 import { MessageMedia } from "whatsapp-web.js";
-export class commands{
- private client
- private message 
-    constructor(client:Client,message:Message){
-       this.message = message
-       this.client = client
-    }
+export class Commands{
+ 
 
-    async botOn(text:string){
-        this.client.sendMessage(this.message.from,text)
+  static  async botOn(text:string,Message:Message){
+        client.sendMessage(Message.from,text)
     }
-    async StickerCreate(){
+   static async StickerCreate(Message:Message){
 
-        if(!this.message.hasMedia){
-            this.message.reply('🤖 Debes enviar una imagen para que funcione el comando')
+        if(Message.hasMedia){
+            await Message.reply('🤖 Debes enviar una imagen para que funcione el comando')
         }
 
-        const media = await this.message.downloadMedia();
+        const media =  await Message.downloadMedia();
 
-        await this.client.sendMessage(this.message.from, media, {
+        await client.sendMessage(Message.from, media, {
                 sendMediaAsSticker: true,
                 stickerAuthor: 'Lazaro Bot MD',
                 stickerName: 'sticker'
             })
             .catch(async (error) => {
-                await this.client.sendMessage(this.message.from, 'No se pudo procesar el sticker');
+                await client.sendMessage(Message.from, 'No se pudo procesar el sticker');
                 return;
             });
     }
    /* async _testName(){
-        console.log(`menssage: ${this.message}`)
+        console.log(`menssage: ${this.Message}`)
     
-        if(!this.message.hasQuotedMsg){
+        if(!this.Message.hasQuotedMsg){
             return
         }        
-        let responseMsg = await this.message.getQuotedMessage()
+        let responseMsg = await this.Message.getQuotedMessage()
 
         if (!responseMsg.id.fromMe){
                 return
             }
-        const searchText = this.message.body.match( /#(.+)/);
+        const searchText = this.Message.body.match( /#(.+)/);
         const textLength = searchText?.length > 1
 
         if (!searchText && !textLength) {
@@ -51,14 +47,14 @@ export class commands{
         }
 
         const number = Number.parseInt(searchText[1].trim())
-        this.message.reply(`buscando ${number}...`,this.message.from)
+        this.Message.reply(`buscando ${number}...`,this.Message.from)
                
-        const text =  this.message.body
+        const text =  this.Message.body
 
         console.log(text)
         if (text.includes("class-nvs")) {
 
-            this.message.react("📕");
+            this.Message.react("📕");
             console.log(text);
             const list = text.split("⭐");
             console.log(list);
@@ -93,16 +89,16 @@ export class commands{
             const media = await MessageMedia.fromUrl(mangaData.img, {
                 unsafeMime: true,
             });
-            this.message.reply(
+            this.Message.reply(
                 media,
-                this.message.from,{
+                this.Message.from,{
                     caption:`
         ${headerText}
         ${chapterList}
                     `});
 
         } else if (text.includes("class-nvi")) {
-            message.react("📖");
+            Message.react("📖");
             const list = text.split("🆔");
             console.log(list);
             const searchID = list[number].match(rege);
@@ -112,7 +108,7 @@ export class commands{
                 .replace("]", "")
                 .trim();
             console.log(id);
-            message.react("📥");
+            Message.react("📥");
 
             sendReply(
                 "descaragando pdf de " +
@@ -127,9 +123,9 @@ export class commands{
 
             sendReply("Archivo descargado con !exito, Enviando...");
 
-            message.react("📤");
+            Message.react("📤");
 
-            await client.sendMessage(message.from, media, {
+            await client.sendMessage(Message.from, media, {
                 sendAsDocument: true,
             });
         } else if (text.includes("class-yts")) {

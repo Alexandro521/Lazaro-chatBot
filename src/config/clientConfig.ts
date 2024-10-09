@@ -1,5 +1,6 @@
-import { LocalAuth } from "whatsapp-web.js"
+import { LocalAuth,NoAuth} from "whatsapp-web.js"
 
+const WWEBVERSION = '2.2410.1'
 export const Config = {
     puppeteer:{
        args: [
@@ -12,13 +13,15 @@ export const Config = {
 '--disable-gpu'
        ]
     },
-    //webVersionCache: {
-        //type: 'remote',
-        //remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html',
-      //  },
-    authStrategy: new LocalAuth({
-        dataPath: 'AuthData'
+    webVersionCache: {
+        type: 'remote',
+        remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${WWEBVERSION}.html`,
+        },
+    authStrategy:  new LocalAuth({
+        dataPath:"AuthData"
     }),
 
     
 }
+
+ 
