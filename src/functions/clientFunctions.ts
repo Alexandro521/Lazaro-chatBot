@@ -2,7 +2,7 @@ import {GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
 import type { groupList } from "../types/types.ts";
 import { client}  from "../index";
 import {schemas} from '../schemas/textSchemas.js';
-import { Commands } from "./commands/command";
+import { Commands } from "./command_functions/menu-1_generals/command.js";
 const qrcode = require('qrcode-terminal');
 //const groupsList = require("../data/groupsList")
 

@@ -1,8 +1,8 @@
 import axios from "axios";
-
-import { client } from "../../index";
-import { schemas } from "../../schemas/textSchemas";
-import { mangaHeaderInfo } from "../../interfaces/mangaHeaderInfo";
+import { Testgay,lazaroImg } from "../../../data/imagesUrl";
+import { client } from "../../../index";
+import { schemas } from "../../../schemas/textSchemas";
+import { mangaHeaderInfo } from "../../../interfaces/mangaHeaderInfo";
 import { MessageMedia,Message,GroupChat} from "whatsapp-web.js";
 export class Commands{
  
@@ -153,11 +153,11 @@ export class Commands{
         return
         }
     //todo: }
-    static async main(Message:Message){
+    static async main(Message:Message){ 
         try{
         await Message.react('📜')
     
-        const media = await MessageMedia.fromFilePath("../../../public/lazaro.jpg");
+        const media = await MessageMedia.fromFilePath(lazaroImg);
         await Message.reply(media,Message.from,{caption:schemas.menu.text})
         }catch(error){
             console.log(error)
@@ -166,7 +166,7 @@ export class Commands{
     static async Everyone(Message:Message){
         try{
         await Message.react('🗣')
-        const chat:GroupChat = await Message.getChat()
+        const chat= <GroupChat> await Message.getChat()
         if(!chat.isGroup){
             Message.reply('Este comando solo puede ser usado enviado en grupos',Message.from)
         }
@@ -187,25 +187,19 @@ export class Commands{
     
             const metionUser = await message.getMentions()
             let randomNumber = Math.floor(Math.random() * 100)
-            const imgList = [
-                '../../../public/lo_suponia/Gay.jpg',
-                '../../../public/lo_suponia/gay2.jpg',
-                '../../../public/lo_suponia/gay3.jpg',
-                '../../../public/lo_suponia/gay4.jpeg',
-                '../../../public/lo_suponia/gay5.jpg'
-            ]//abierto a que se agreguen mas imagenes
-            let img = null
+            const imgList = Testgay.imgList
+            let img;
 
             if (randomNumber < 70) {
                 img = imgList[Math.floor(Math.random() * 5 - 1)]
 
             } else if (randomNumber > 70 && randomNumber < 90) {
 
-                img = '../../../public/lo_suponia/lo_ultra_suponia.jpeg'
+                img = Testgay.porcent70
 
             } else if (randomNumber > 90) {
 
-                img = '../../../public/lo_suponia/lo_ultra_mega_suponia.jpeg'
+                img = Testgay.porcent90
 
             }
             const media = await MessageMedia.fromFilePath(img);
