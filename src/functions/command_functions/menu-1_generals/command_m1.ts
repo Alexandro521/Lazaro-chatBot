@@ -4,9 +4,8 @@ import { client } from "../../../index";
 import { schemas } from "../../../schemas/textSchemas";
 import { mangaHeaderInfo } from "../../../interfaces/mangaHeaderInfo";
 import { MessageMedia,Message,GroupChat} from "whatsapp-web.js";
-export class Commands{
- 
 
+export class Commands{
   static  async botOn(text:string,Message:Message){
        await client.sendMessage(Message.from,text)
        return
@@ -221,5 +220,4 @@ export class Commands{
             console.log(error)
         }}
     }
-
 }

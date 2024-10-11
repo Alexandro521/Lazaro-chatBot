@@ -1,129 +1,126 @@
-import {GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
+import { GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
 import type { groupList } from "../types/types.ts";
-import { client}  from "../index";
-import {schemas} from '../schemas/textSchemas.js';
-import { Commands } from "./command_functions/menu-1_generals/command.js";
-const qrcode = require('qrcode-terminal');
-//const groupsList = require("../data/groupsList")
+import { client } from "../index";
+import { schemas } from "../schemas/textSchemas.js";
+import { main } from "./command_functions/main";
+const qrcode = require("qrcode-terminal");
 
+export class clientFunc {
+  static async Ready() {
+    console.log("Client is ready!");
 
-export  class clientFunc{
-  
-     static async Ready(){
-        console.log("Client is ready!");
+    //const media = await MessageMedia.fromFilePath(schemas.botInit.img);
 
-        //const media = await MessageMedia.fromFilePath(schemas.botInit.img);
-    
-        console.log("Enviando mensaje");
-    
-        /*const groupsIdList:groupList = await JSON.parse(groupsList)
+    console.log("Enviando mensaje");
+
+    /*const groupsIdList:groupList = await JSON.parse(groupsList)
 
          //puesto de manera manual temporalmente */
-        //groupsIdList.forEach(async (groupID) => {
-            await client.sendMessage("120363183730817172@g.us", schemas.botInit.text);
-        //});
-    }
-  static  Auth(){
-    console.log('AUTHENTICATED');
-    }
-  static  Loading(percent:string,message:string){
-        console.log('LOADING SCREEN', percent, message);
-    }
-  static  AuthError(error:string){
-        console.log('AUTH ERROR', error);
-    }
-  static  QR(qr:string){
-    qrcode.generate(qr, {small: true});
-    }
-    static async AdminChange(notification:GroupNotification){
-        const type:string = notification.type;
+    //groupsIdList.forEach(async (groupID) => {
+    await client.sendMessage("120363183730817172@g.us", schemas.botInit.text);
+    //});
+  }
+  static Auth() {
+    console.log("AUTHENTICATED");
+  }
+  static Loading(percent: string, message: string) {
+    console.log("LOADING SCREEN", percent, message);
+  }
+  static AuthError(error: string) {
+    console.log("AUTH ERROR", error);
+  }
+  static QR(qr: string) {
+    qrcode.generate(qr, { small: true });
+  }
+  static async AdminChange(notification: GroupNotification) {
+    const type: string = notification.type;
 
-        if (type === "promote") {
-            console.log(notification)
-            console.log(`You were promoted by ${notification.author}`);
-        } else if (type === 'demote')
-            console.log(notification)
-            console.log(`You were demoted by ${notification.author}`);
-    }
- static   async GroupUpdate(notification:GroupNotification){
-        // Group picture, subject or description has been updated.
-        console.log('update', notification);
-    }
-static async GroupLeave (notification:GroupNotification) {
-        // User has left or been kicked from the group.
-        console.log('leave', notification);
-        notification.reply('User left.');
-        const c =await notification.getContact()
-        console.log('--------------------')
-        const profile =await client.getProfilePicUrl(notification.id+'@g.us')
-        console.log(profile)
-        console.log(c)
-    }
- static   async GroupJoin (notification:GroupNotification) {
-        console.log('join', notification);
-        notification.reply('User joined.');
-       const c =await notification.getContact()
+    if (type === "promote") {
+      console.log(notification);
+      console.log(`You were promoted by ${notification.author}`);
+    } else if (type === "demote") console.log(notification);
+    console.log(`You were demoted by ${notification.author}`);
+  }
+  static async GroupUpdate(notification: GroupNotification) {
+    // Group picture, subject or description has been updated.
+    console.log("update", notification);
+  }
+  static async GroupLeave(notification: GroupNotification) {
+    // User has left or been kicked from the group.
+    console.log("leave", notification);
+    notification.reply("User left.");
+    const c = await notification.getContact();
+    console.log("--------------------");
+    const profile = await client.getProfilePicUrl(notification.id + "@g.us");
+    console.log(profile);
+    console.log(c);
+  }
+  static async GroupJoin(notification: GroupNotification) {
+    console.log("join", notification);
+    notification.reply("User joined.");
+    const c = await notification.getContact();
+  }
+  static async MessageRevokeEveryone(after: Message, before: Message) {
+    const chat = await before?.getChat();
+    if (chat?.isGroup) {
+      console.log("after");
+      console.log(after);
 
-    }
-static    async MessageRevokeEveryone(after:Message,before:Message){
-
-        const chat = await before?.getChat()
-        if(chat?.isGroup){
-            console.log('after')
-             console.log(after); 
-     
-            if (before?.type === 'image') {
-                console.log(before)
-             /*   const media = await new MessageMedia(before.mime,before._data.body)
+      if (before?.type === "image") {
+        console.log(before);
+        /*   const media = await new MessageMedia(before.mime,before._data.body)
                 client.sendMessage(before.from,media,{caption:  `el que nada teme nada borra`+ ` @${before._data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n ${before._data.caption}`,
             mentions: [before._data.id.participant]})*/
-            }
-            else{
-            // console.log('before')
-            // const mentions = [before._data.id.participant]
-    
-            // const contact = await before?.getContact()
-            // console.log(contact)
-            // console.log(before); // message before it was deleted.
-            // client.sendMessage(before.from,
-            //  'el que nada teme nada borra'+ ` @${before._data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n`+
-            //  '\n`'+ before?._data.body +'`'
-            // ,{mentions})
-        
-    }}
+      } else {
+        // console.log('before')
+        // const mentions = [before._data.id.participant]
+        // const contact = await before?.getContact()
+        // console.log(contact)
+        // console.log(before); // message before it was deleted.
+        // client.sendMessage(before.from,
+        //  'el que nada teme nada borra'+ ` @${before._data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n`+
+        //  '\n`'+ before?._data.body +'`'
+        // ,{mentions})
+      }
     }
- static   async MessageCreate(message:Message){
-        try {
-           
+  }
+  static async MessageCreate(message: Message) {
+    try {
+      const msg = message.body;
+      console.log(msg);
 
-            const msg = message.body
-            console.log(msg)
-
-            if (msg === '!bot on') {
-                 await Commands.botOn("Hola mundo",message)
-            }
-            else if (msg === "!sticker") {
-
-                 await Commands.StickerCreate(message)
-            }
-            else if (msg.startsWith("#")) {
-                await Commands._testName(message)
-                console.log("hola")
-            }
-            else if (msg === '!bot off') {
-                Commands.botOn('Adios mundo cruel 😩',message)
-            }
-            else if (msg === '!menu') {
-                Commands.main(message)
-            }
-            
-            else if (msg === '!everyone') {
-               Commands.Everyone(message)
-            }
-            else if (msg.startsWith('!test_gay')) {
-                 Commands.test_gay(message)
-            }
-        /*   
+      if (msg === "!bot on") {
+        await main.general.botOn("Hola mundo", message);
+      } else if (msg === "!sticker") {
+        await main.general.StickerCreate(message);
+      } else if (msg.startsWith("#")) {
+        await main.general._testName(message);
+      } else if (msg === "!bot off") {
+        main.general.botOn("Adios mundo cruel 😩", message);
+      } else if (msg === "!menu") {
+        main.general.main(message);
+      } else if (msg === "!everyone") {
+        main.general.Everyone(message);
+      } else if (msg.startsWith("!test_gay")) {
+        main.general.test_gay(message);
+      } else if (msg.startsWith("!lyricSearch")) {
+        main.Search.LyricSearch(message);
+      } else if (msg.startsWith("!getLyric")) {
+        main.Search.GetLyric(message);
+      } else if (msg.startsWith("!GLYSearch")) {
+        main.Search.GlySearch(message);
+      } else if (msg.startsWith("!Pokemon")) {
+        main.Search.Pokemon(message);
+      } else if (msg.startsWith("!pinterest")) {
+        main.Search.Pinterest(message);
+      } else if (msg.startsWith("!img")) {
+        main.Search.ImgByGoogle(message);
+      } else if (msg.startsWith("!img_Bing")) {
+        main.Search.ImgByBing(message);
+      } else if (msg.startsWith("!tik_tok")) {
+        main.Search.TikTokSearch(message);
+      }
+      /*   
 
             
             else if (msg.startsWith('!yts')) {
@@ -467,96 +464,7 @@ static    async MessageRevokeEveryone(after:Message,before:Message){
                     sendReply('Error: parametro requerido ":" ')
                 }
             }
-            else if (msg.startsWith('!lyricSearch')) {
-                const regex = /!lyricSearch(.+)/
-                const text = msg.match(regex)
-                console.log(text)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/genius?q=${text[1].trim()}`)
-                    const dataArray = data.data;
-                    let sendText = ''
-                    let i = 0
-                    dataArray.forEach(element => {
-                        sendText +=
-                            `*[${i += 1}]🎶${element.fullTitle}*\n` +
-                            `   - 🎙 Artista: ${element.artist.name}} \n` +
-                            `   - ✒ liryc: {${element.url}} \n \n`
-                    })
-                    const media = await MessageMedia.fromUrl(dataArray[0].image, { unsafeMime: true })
-                    sendReply(media,
-                        `resultados de ${text[1].trim()}\n` +
-                        `📎${dataArray.length} Resultados \n \n` +
-                        sendText
-                    )
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!getLyric')) {
-                const regex = /!getLyric(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(
-                        'https://delirius-api-oficial.vercel.app/api/lyrics?url=' +
-                        text[1]);
-                    sendReply('Aqui esta la letra de tu cancion  \n \n' + data.data.lyrics)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-    
-            else if (msg.startsWith('!GLYSearch')) {
-                const regex = /!GLYSearch(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/letra?query=${text[1].trim()}`)
-                    const obj = data.data
-                    const media = await MessageMedia.fromUrl(obj.data.image)
-                    sendReply(media,
-                        `*🎶${data.data.data.fullTitle}*\n\n` +
-                        `- 🎙 Artista: ${obj.data.artist} \n` +
-                        `- ✒ liryc: {${obj.data.lyrics}} \n\n\n`
-                    )
-
-
-
-
-
-
-
-
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!Pokemon')) {
-                const regex = /!Pokemon(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const media = await MessageMedia.fromUrl(`https://delirius-api-oficial.vercel.app/api/pokecard?text=${text[1].trimStart().trimEnd()}`, {
-                        unsafeMime: true
-                    })
-                    sendReply(media)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!pinterest')) {
-                const regex = /!pinterest(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    console.log(text[1])
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/pinterest?text=${text[1].trim()}`)
-                    const arr = data.data.result;
-                    console.log(arr)
-                    console.log(data.status)
-                    const randomNumber = Math.floor(Math.random() * (arr.length - 1))
-                    const media = await MessageMedia.fromUrl(arr[randomNumber].media.url, { unsafeMime: true })
-                    sendReply(media, arr[randomNumber].title)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
+           
             else if (msg.startsWith('!Rule34')) {
                 const regex = /!Rule34(.+)/
                 const text = msg.match(regex)
@@ -578,51 +486,7 @@ static    async MessageRevokeEveryone(after:Message,before:Message){
     
                 }
             }
-            else if (msg.startsWith('!img')) {
-                const regex = /!img(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/gimage?query=${text[1].trim()}`)
-                    const arr = data.data.data;
-                    console.log(arr)
-                    const randomNumber = Math.floor(Math.random() * arr.length - 1)
-                    const media = await MessageMedia.fromUrl(arr[randomNumber].url, { unsafeMime: true })
-                    sendReply(media)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!img_Bing')) {
-                const regex = /!img_Bing(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/bingimage?query=${text[1].trim()}`)
-                    const arr = data.data.results;
-                    const randomNumber = Math.floor(Math.random() * arr.length - 1)
-                    const media = await MessageMedia.fromUrl(arr[randomNumber].thumbnail, { unsafeMime: true })
-                    sendReply(media, arr[randomNumber].description)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!tik_tok')) {
-                const regex = /!tik_tok(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/tiktoksearch?query=${text[1].trim}`)
-                    const arrResult = data.data;
-                    let textResult = ''
-                    arrResult.meta.forEach(element => {
-                        textResult += 'titulo: ' + element.title +
-                            ' \n link: ' + element.hd + ' \n \n'
-                    })
-                    sendReply(
-                        'resultados de tu busqueda  \n \n' + textResult
-                    )
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
+
             else if (msg.startsWith('!chatgpt')) {
                 const regex = /!chatgpt(.+)/
                 const text = msg.match(regex)
@@ -743,10 +607,9 @@ static    async MessageRevokeEveryone(after:Message,before:Message){
                 const media = await MessageMedia.fromFilePath(process.cwd() + '/descarga.mp4')
                 client.sendMessage(message.from, media)
             }*/
-        } catch (error) {
-            console.log(error)
-            client.sendMessage(message.from, 'Ups ah ocurrido algo:' + error)
-        }
+    } catch (error) {
+      console.log(error);
+      client.sendMessage(message.from, "Ups ah ocurrido algo:" + error);
     }
-    }
-
+  }
+}

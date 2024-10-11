@@ -22,4 +22,4 @@ client.initialize();
 
 export {
     client
-}
+} 
