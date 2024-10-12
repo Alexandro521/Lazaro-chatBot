@@ -129,6 +129,14 @@ export class clientFunc {
         main.AI.Gemini(message);
       } else if (msg.startsWith("!simi")) {
         main.AI.Simi(message);
+      } else if (msg === "!loli") {
+        main.Anime.loli(message);
+      } else if (msg === "!foxgirl") {
+        main.Anime.foxgirl(message);
+      } else if (msg === "!lolipc") {
+        main.Anime.lolipc(message);
+      } else if (msg === "!neko") {
+        main.Anime.neko(message);
       }
       /*   
 
@@ -498,22 +506,7 @@ export class clientFunc {
             }
 
            
-            else if (msg === '!loli') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/loli', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!foxgirl') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/foxgirl', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!lolipc') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/lolipc', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!neko') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/neko', { unsafeMime: true })
-                sendReply(media)
-            }
+         
             else if (msg === '!china') {
                 const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/china', { unsafeMime: true })
                 sendReply(media)

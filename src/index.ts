@@ -3,7 +3,7 @@ import{Client} from 'whatsapp-web.js';
 const {Config} = require('./config/clientConfig')
 import {clientFunc} from './functions/clientFunctions'
 
-const client = new Client(Config);
+export const client = new Client(Config);
  
 client.on('loading_screen',clientFunc.Loading);
 client.on('authenticated',clientFunc.Auth);
@@ -20,6 +20,3 @@ client.on('message_create',clientFunc.MessageCreate)
 
 client.initialize();
 
-export {
-    client
-} 
