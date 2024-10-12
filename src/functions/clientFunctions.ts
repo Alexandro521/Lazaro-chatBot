@@ -119,6 +119,16 @@ export class clientFunc {
         main.Search.ImgByBing(message);
       } else if (msg.startsWith("!tik_tok")) {
         main.Search.TikTokSearch(message);
+      } else if (msg.startsWith("!chatgpt")) {
+        main.AI.ChatGPT(message);
+      } else if (msg.startsWith("!BingChat")) {
+        main.AI.Bingchat(message);
+      } else if (msg.startsWith("!gpt-4")) {
+        main.AI.Gpt4(message);
+      } else if (msg.startsWith("!Gemini")) {
+        main.AI.Gemini(message);
+      } else if (msg.startsWith("!simi")) {
+        main.AI.Simi(message);
       }
       /*   
 
@@ -487,56 +497,7 @@ export class clientFunc {
                 }
             }
 
-            else if (msg.startsWith('!chatgpt')) {
-                const regex = /!chatgpt(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${text[1].trim()}`)
-                    sendReply(data.data.data)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!BingChat')) {
-                const regex = /!BingChat(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/bingia?query=${text[1].trim()}`)
-                    sendReply(data.data.message)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!gpt-4')) {
-                const regex = /!gpt-4(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/ia2?text=quien%20eres%20y%20quien%20es%20tu%20creador?&prompt=${text[1].trim()}`)
-                    sendReply(data.data.gpt)
-                } else {
-                    sendReply('!especifica un texto a buscar');
-                }
-            }
-            else if (msg.startsWith('!Gemini')) {
-                const regex = /!Gemini(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/gemini?query=${text[1].trim()}`)
-                    sendReply(data.data.message)
-                } else {
-    
-                }
-            }
-            else if (msg.startsWith('!simi')) {
-                const regex = /!simi(.+)/
-                const text = msg.match(regex)
-                if (regex && text[1].length > 1) {
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/simi?text=${text[1].trim()}`)
-                    sendReply(data.data.data.message)
-                } else {
-    
-                }
-            }
+           
             else if (msg === '!loli') {
                 const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/loli', { unsafeMime: true })
                 sendReply(media)
