@@ -1,6 +1,5 @@
-import axios from "axios";
-import { client } from "../../../index";
-import { MessageMedia, Message, GroupChat } from "whatsapp-web.js";
+
+import { MessageMedia, Message} from "whatsapp-web.js";
 
 export class CommandsAnime {
 private static async commandStruct(

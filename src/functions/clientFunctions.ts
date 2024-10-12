@@ -137,6 +137,16 @@ export class clientFunc {
         main.Anime.lolipc(message);
       } else if (msg === "!neko") {
         main.Anime.neko(message);
+      } else if (msg.startsWith("!Rule34")) {
+        main.Nsfw.Rule34(message);
+      } else if (msg === "!china") {
+        main.Nsfw.Asian(message);
+      } else if (msg === "!japan") {
+        main.Nsfw.Japan(message);
+      } else if (msg === "!boobs") {
+        main.Nsfw.Boobs(message);
+      } else if (msg === "!pack") {
+        main.Nsfw.Pack(message);
       }
       /*   
 
@@ -483,46 +493,7 @@ export class clientFunc {
                 }
             }
            
-            else if (msg.startsWith('!Rule34')) {
-                const regex = /!Rule34(.+)/
-                const text = msg.match(regex)
-                if (text && text[1].length > 1) {
-                    console.log(text)
-                    console.log(text[1])
-                    const data = await axios.get(`https://delirius-api-oficial.vercel.app/api/rule34?query=${text[1].trim()}`)
-                    if (data.status === 200) {
-                        const res = data.data
-                        const arr = res.images
-                        const randomNumber = Math.floor(Math.random() * arr.length)
-                        console.log(res)
-                        console.log(arr)
-                        const media = await MessageMedia.fromUrl(arr[randomNumber], { unsafeMime: true })
-                        sendReply(media)
-                    }
-                } else {
-                    sendReply('!especifica un texto a buscar');
-    
-                }
-            }
-
-           
-         
-            else if (msg === '!china') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/china', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!japan') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/japan', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!boobs') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/boobs', { unsafeMime: true })
-                sendReply(media)
-            }
-            else if (msg === '!pack') {
-                const media = await MessageMedia.fromUrl('https://delirius-api-oficial.vercel.app/api/girls', { unsafeMime: true })
-                sendReply(media)
-            }
+          
             else if (msg.startsWith('!emojiFusion')) {
                 const emojToHex = (emoji) => {
                     const emojiCode = emoji.codePointAt().toString(16)
