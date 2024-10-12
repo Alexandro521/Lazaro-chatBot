@@ -1,5 +1,5 @@
-import { GroupNotification, Message, MessageMedia } from "whatsapp-web.js";
-import type { groupList } from "../types/types.ts";
+import { GroupNotification, Message} from "whatsapp-web.js";
+import { CommandList } from "../Admin/comandList";
 import { client } from "../index";
 import { schemas } from "../schemas/textSchemas.js";
 import { main } from "./command_functions/main";
@@ -88,64 +88,64 @@ export class clientFunc {
     try {
       const msg = message.body;
       console.log(msg);
-
-      if (msg === "!bot on") {
+      
+      if (msg === CommandList._generals.botON.x) {
         await main.general.botOn("Hola mundo", message);
-      } else if (msg === "!sticker") {
+      } else if (msg === CommandList._tools.stickerCrate.x) {
         await main.general.StickerCreate(message);
       } else if (msg.startsWith("#")) {
         await main.general._testName(message);
-      } else if (msg === "!bot off") {
+      } else if (msg === CommandList._generals.botOff.x) {
         main.general.botOn("Adios mundo cruel 😩", message);
-      } else if (msg === "!menu") {
+      } else if (msg === CommandList._main.main) {
         main.general.main(message);
-      } else if (msg === "!everyone") {
+      } else if (msg === CommandList._generals.Everyone.x) {
         main.general.Everyone(message);
-      } else if (msg.startsWith("!test_gay")) {
+      } else if (msg.startsWith(CommandList._generals.testGay.x)) {
         main.general.test_gay(message);
-      } else if (msg.startsWith("!lyricSearch")) {
+      } else if (msg.startsWith(CommandList._search.LyricSearch.x)) {
         main.Search.LyricSearch(message);
-      } else if (msg.startsWith("!getLyric")) {
+      } else if (msg.startsWith(CommandList._search.GetLyric.x)) {
         main.Search.GetLyric(message);
-      } else if (msg.startsWith("!GLYSearch")) {
+      } else if (msg.startsWith(CommandList._search.GlySearch.x)) {
         main.Search.GlySearch(message);
-      } else if (msg.startsWith("!Pokemon")) {
+      } else if (msg.startsWith(CommandList._search.Pokemon.x)) {
         main.Search.Pokemon(message);
-      } else if (msg.startsWith("!pinterest")) {
+      } else if (msg.startsWith(CommandList._search.Pinterest.x)) {
         main.Search.Pinterest(message);
-      } else if (msg.startsWith("!img")) {
+      } else if (msg.startsWith(CommandList._search.ImgByGoogle.x)) {
         main.Search.ImgByGoogle(message);
-      } else if (msg.startsWith("!img_Bing")) {
+      } else if (msg.startsWith(CommandList._search.ImgByBing.x)) {
         main.Search.ImgByBing(message);
-      } else if (msg.startsWith("!tik_tok")) {
+      } else if (msg.startsWith(CommandList._search.TikTokSearch.x)) {
         main.Search.TikTokSearch(message);
-      } else if (msg.startsWith("!chatgpt")) {
+      } else if (msg.startsWith(CommandList._AI.chatgpt.x)) {
         main.AI.ChatGPT(message);
-      } else if (msg.startsWith("!BingChat")) {
+      } else if (msg.startsWith(CommandList._AI.Bingchat.x)) {
         main.AI.Bingchat(message);
-      } else if (msg.startsWith("!gpt-4")) {
+      } else if (msg.startsWith(CommandList._AI.gpt4.x)) {
         main.AI.Gpt4(message);
-      } else if (msg.startsWith("!Gemini")) {
+      } else if (msg.startsWith(CommandList._AI.Gemini.x)) {
         main.AI.Gemini(message);
-      } else if (msg.startsWith("!simi")) {
+      } else if (msg.startsWith(CommandList._AI.Simi.x)) {
         main.AI.Simi(message);
-      } else if (msg === "!loli") {
+      } else if (msg === CommandList._Anime.neko.x) {
         main.Anime.loli(message);
-      } else if (msg === "!foxgirl") {
+      } else if (msg === CommandList._Anime.loli.x) {
         main.Anime.foxgirl(message);
-      } else if (msg === "!lolipc") {
+      } else if (msg === CommandList._Anime.lolipc.x) {
         main.Anime.lolipc(message);
-      } else if (msg === "!neko") {
+      } else if (msg === CommandList._nsfw.china.x) {
         main.Anime.neko(message);
-      } else if (msg.startsWith("!Rule34")) {
+      } else if (msg.startsWith(CommandList._nsfw.japan.x)) {
         main.Nsfw.Rule34(message);
-      } else if (msg === "!china") {
+      } else if (msg === CommandList._nsfw.boobs.x) {
         main.Nsfw.Asian(message);
-      } else if (msg === "!japan") {
+      } else if (msg === CommandList._nsfw.girls.x) {
         main.Nsfw.Japan(message);
-      } else if (msg === "!boobs") {
+      } else if (msg === CommandList._nsfw.rule34.x) {
         main.Nsfw.Boobs(message);
-      } else if (msg === "!pack") {
+      } else if (msg === CommandList._nsfw.china.x) {
         main.Nsfw.Pack(message);
       }
       /*   
@@ -538,3 +538,4 @@ export class clientFunc {
     }
   }
 }
+ 

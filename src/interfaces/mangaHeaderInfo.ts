@@ -6,5 +6,6 @@ bookType:string,
 views:number,
 genres:string[]
 description:string,
-chaptersList:any[]
+chaptersList:any[],
+
 }
