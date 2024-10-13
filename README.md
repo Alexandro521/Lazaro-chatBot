@@ -1,23 +1,74 @@
-[![npm](https://img.shields.io/npm/v/whatsapp-web.js.svg)](https://www.npmjs.com/package/whatsapp-web.js) [![Depfu](https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg)](https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765) ![WhatsApp_Web 2.2346.52](https://img.shields.io/badge/WhatsApp_Web-2.2346.52-brightgreen.svg) [![Discord Chat](https://img.shields.io/discord/698610475432411196.svg?logo=discord)](https://discord.gg/H7DqQs4)  
 
-# Lazaro chat bot para Whatsapp
+<center>
 
-### como ejecutar lazaro bot
+# Lazaro chat Bot for whatsapp
 
+[![npm](https://img.shields.io/npm/v/whatsapp-web.js.svg)](https://www.npmjs.com/package/whatsapp-web.js) [![Depfu](https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg)](https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765) ![WhatsApp_Web 2.2346.52](https://img.shields.io/badge/WhatsApp_Web-2.2346.52-brightgreen.svg) [![Whattsapp chat](https://img.shields.io/badge/Whattsapp-chat-green.svg)](https://chat.whatsapp.com/L5j2l4r1l0i0l2j1l3j0)
 
-##### instalar dependencias
-```javascript
- //npm
+<img src="./public/lazaro.jpg" width="400" height="400" style="border-radius:50%;box-shadow: 0px 5px 40px rgba(159, 15, 145, 0.3);">
+
+---
+
+</center>   
+
+## Que es esto?
+
+Este es un completo bot de whatsapp paa grupos o uso personal
+
+Nuestro bot cuenta con una gran variedad de funciones que le daran un toque de magia a sus chat,
+lazaro bot es configurable permitiendole a usted adaptarlo a sus necesidades.
+
+Este bot esta basado en [Whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) library.
+
+## Como funciona?
+
+Antes que nada necesitas un ordenador, una smartphone y una cuenta de whatsapp.
+
+### Requisitos
+
+- Necesitas tener una cuenta de whatsapp activa
+
+- Necesitas tener node js Instalado.
+
+---
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Alexandro521/Lazaro-chatBot.git
+```
+
+2. Install the dependencies:
+
+```bash
+#width npm
 npm install
-//pnpm
+#width pnpm 
 pnpm add
 ```
-##### compilar el proyecto
-```js
+3. Compile typeScript project 
+
+```bash
 npm run build
 ```
-##### ejecutar bot
-```js
+4. Run project
+
+```bash
 npm run bot
 ```
-#### vincular cuenta de whatsapp 
+5. Scan Qr code width you smarthphone and link whatsapp accout
+
+Example 
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMDPN0Q4-2MYnFWfM0tfvUCItbokDxOn8rkg&s" alt="Qr code example" width="800" heigth="800">
+
+---
+
+## Usage
+
+invoca  los comandos usando el prefijo <strong>!</strong> seguido del nombre del comando
+
+---
+
+## Lista de comandos
