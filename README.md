@@ -33,33 +33,30 @@ Antes que nada necesitas un ordenador, una smartphone y una cuenta de whatsapp.
 ---
 ### Installation
 
-1. Clone the repository:
+1. Clonar el repositorio:
 
 ```bash
 git clone https://github.com/Alexandro521/Lazaro-chatBot.git
 ```
 
-2. Install the dependencies:
+2. Instalar las dependencias:
 
 ```bash
-#width npm
 npm install
-#width pnpm 
-pnpm add
 ```
-3. Compile typeScript project 
+3. Compilar el proyecto 
 
 ```bash
 npm run build
 ```
-4. Run project
+4.Ejecutar el proyecto
 
 ```bash
 npm run bot
 ```
-5. Scan Qr code width you smarthphone and link whatsapp accout
+5. Vincular su cuenta de whatsapp escaneando el codigo Qr con su dispositivo movil
 
-Example 
+Ejemplo
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMDPN0Q4-2MYnFWfM0tfvUCItbokDxOn8rkg&s" alt="Qr code example" width="800" heigth="800">
 
