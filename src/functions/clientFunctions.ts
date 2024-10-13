@@ -30,7 +30,8 @@ export class clientFunc {
     console.log("AUTH ERROR", error);
   }
   static QR(qr: string) {
-    qrcode.generate(qr, { small: true });
+    const code = qrcode.generate(qr, { small: true });
+    console.log("QR CODE", code);
   }
   static async AdminChange(notification: GroupNotification) {
     const type: string = notification.type;

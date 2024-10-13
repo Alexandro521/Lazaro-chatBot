@@ -1,19 +1,22 @@
 import axios from "axios";
 import { client } from "../../../index";
 import { MessageMedia, Message, GroupChat } from "whatsapp-web.js";
-
+import { error } from "console";
+import { ApiUrl } from "../../../data/DelirusApisUrls";
 export class CommandsSearch {
   static async LyricSearch(message: Message) {
-    const text = message.body.match(/!lyricSearch(.+)/);
-    console.log(text);
+    try {
+      const msg =message.body 
+      const regex = /(!lyricSearch)(.+)\w+/g;
+    const text = msg.match(regex);
+    console.log(text,msg);
 
-    if (!(text[1].length > 1)) {
+    if (!(text[2].length > 1 || !text[2])) {
       await message.reply("🤖 Debes Especificar un texto a buscar");
       return;
     }
-    const request = await axios.get(
-      `https://delirius-api-oficial.vercel.app/api/genius?q=${text[1].trim()}`
-    );
+    const request = await axios.get(ApiUrl.Search.genius+(text[1].trim()));
+
     const dataArray = request.data;
     let sendText = "";
     let i = 0;
@@ -32,6 +35,8 @@ export class CommandsSearch {
         `📎${dataArray.length} Resultados \n \n` +
         sendText
     );
+    } catch (error) { console.log(error)}
+    await message.reply("Ups a ocurrido un error :\n\n" + error)
   }
   static async GetLyric(message: Message) {
     const text = message.body.match(/!getLyric(.+)/);
