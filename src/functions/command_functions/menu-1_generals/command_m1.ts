@@ -4,9 +4,13 @@ import { client } from "../../../index";
 import { schemas } from "../../../schemas/textSchemas";
 import { mangaHeaderInfo } from "../../../interfaces/mangaHeaderInfo";
 import { MessageMedia,Message,GroupChat} from "whatsapp-web.js";
+import { CommandList } from "../../../Admin/comandList";
+import { Auth } from "../Auth";
 
 export class Commands{
   static  async botOn(text:string,Message:Message){
+      const props = CommandList._generals.botON.props
+      //Auth(Message,)
        await client.sendMessage(Message.from,text)
        return
     }

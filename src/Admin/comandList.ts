@@ -6,13 +6,15 @@ export const CommandList = {
     _generals: {
         botON: {
             x: "!bot on",
+            props:{
             IsDesabilited: false,
             onlyAdmin: false,
             onlyGroups: false,
             onlForGroupsAdmin: false,
             restrictedUsers: [],
             restrictedGroups: [],
-            onlyForUsers: [],
+            onlyForUsers: []}
+            
         },
         botOff: {
             x: "!bot off",

@@ -5,9 +5,9 @@ export interface command {
     onlyAdmin: boolean
     onlyGroups: boolean
     onlForGroupsAdmin: boolean
-    restrictedUsersId: string[],
-    restrictedGroupsId: string[]
-    onlyForUsersId: string[]}
+    restrictedUsersId: any[],
+    restrictedGroupsId: any[]
+    onlyForUsersId: any[]}
   
 export interface menuList{
 

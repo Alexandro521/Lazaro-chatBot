@@ -145,7 +145,7 @@ export class clientFunc {
         main.Nsfw.Japan(message);
       } else if (msg === CommandList._nsfw.rule34.x) {
         main.Nsfw.Boobs(message);
-      } else if (msg === CommandList._nsfw.china.x) {
+      } else if (msg === CommandList._nsfw.boobs.x) {
         main.Nsfw.Pack(message);
       }
       /*   
