@@ -1,10 +1,9 @@
 import axios from "axios";
-import { client } from "../../../index";
-import { MessageMedia, Message, GroupChat } from "whatsapp-web.js";
+import { MessageMedia, Message} from "whatsapp-web.js";
 
 export class CommandsNsfw {
  private static async CommandsStruct(
-    message: Message, 
+    Message: Message, 
     ApiRequesUrl: string,
     option:{
         requestFailResponse: string,
@@ -14,29 +13,29 @@ export class CommandsNsfw {
 ) {
             try {
                 const media = await MessageMedia.fromUrl(ApiRequesUrl, { unsafeMime: true })
-                await message.reply(media)
+                await Message.reply(media)
             }catch(error){
                 console.log(error)
-                await message.reply(option.requestFailResponse + error )
+                await Message.reply(option.requestFailResponse + error )
             }
 }
-static async Asian(message: Message) {
-    await this.CommandsStruct(message, `https://delirius-api-oficial.vercel.app/api/china`)
+static async Asian({Message}:{Message: Message}) {
+    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/china`)
  }
- static async Japan(message: Message) {
-    await this.CommandsStruct(message, `https://delirius-api-oficial.vercel.app/api/japan`)
+ static async Japan({Message}:{Message: Message}) {
+    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/japan`)
  }
- static async Boobs(message: Message) {
-    await this.CommandsStruct(message, `https://delirius-api-oficial.vercel.app/api/boobs`)
+ static async Boobs({Message}:{Message: Message}) {
+    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/boobs`)
  }
- static async Pack(message: Message) {
-    await this.CommandsStruct(message, `https://delirius-api-oficial.vercel.app/api/girls`)
+ static async Pack({Message}:{Message: Message}) {
+    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/girls`)
  }
- static async Rule34(message: Message) {
+ static async Rule34({Message}:{Message: Message}) {
     try {
-        const text = message.body.match(/!Rule34(.+)/);
+        const text = Message.body.match(/!Rule34(.+)/);
         if (!(text[1].length > 1)) {
-            message.reply("!especifica un texto a buscar");
+            Message.reply("!especifica un texto a buscar");
             return;
         }
             const res = await axios.get(`https://delirius-api-oficial.vercel.app/api/rule34?query=${text[1].trim()}`)
@@ -47,11 +46,11 @@ static async Asian(message: Message) {
              const randomNumber = Math.floor(Math.random() * arr.length)
 
             const media = await MessageMedia.fromUrl(arr[randomNumber], { unsafeMime: true })
-            message.reply(media)
+            Message.reply(media)
             
     } catch (error) {
         console.log(error)
-        await message.reply("Ups a ocurrido un error :/\n\n" + error)
+        await Message.reply("Ups a ocurrido un error :/\n\n" + error)
     }
  }
 

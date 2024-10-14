@@ -2,7 +2,6 @@ import { GroupNotification, Message} from "whatsapp-web.js";
 import { CommandList } from "../Admin/comandList";
 import { client } from "../index";
 import { schemas } from "../schemas/textSchemas.js";
-import { main } from "./command_functions/main";
 const qrcode = require("qrcode-terminal");
 
 export class clientFunc {
@@ -69,18 +68,18 @@ export class clientFunc {
 
       if (before?.type === "image") {
         console.log(before);
-        /*   const media = await new MessageMedia(before.mime,before._data.body)
-                client.sendMessage(before.from,media,{caption:  `el que nada teme nada borra`+ ` @${before._data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n ${before._data.caption}`,
-            mentions: [before._data.id.participant]})*/
+        /*   const media = await new MessageMedia(before.mime,before.data.body)
+                client.sendMessage(before.from,media,{caption:  `el que nada teme nada borra`+ ` @${before.data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n ${before.data.caption}`,
+            mentions: [before.data.id.participant]})*/
       } else {
         // console.log('before')
-        // const mentions = [before._data.id.participant]
+        // const mentions = [before.data.id.participant]
         // const contact = await before?.getContact()
         // console.log(contact)
         // console.log(before); // message before it was deleted.
         // client.sendMessage(before.from,
-        //  'el que nada teme nada borra'+ ` @${before._data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n`+
-        //  '\n`'+ before?._data.body +'`'
+        //  'el que nada teme nada borra'+ ` @${before.data.id.participant.replace('@c.us','')} eh aqui lo que borraste \n`+
+        //  '\n`'+ before?.data.body +'`'
         // ,{mentions})
       }
     }
@@ -90,64 +89,63 @@ export class clientFunc {
       const msg = message.body;
       console.log(msg);
       
-      if (msg === CommandList._generals.botON.x) {
-        await main.general.botOn("Hola mundo", message);
-      } else if (msg === CommandList._tools.stickerCrate.x) {
-        await main.general.StickerCreate(message);
+      if (msg === CommandList.general.botON.x) {
+        await CommandList.general.botON.exec(message,"Hola mundo 🌎")
+      } else if (msg === CommandList.tools.stickerCrate.x) {
+        return
+       // await CommandList.tools.stickerCrate
       } else if (msg.startsWith("#")) {
-        await main.general._testName(message);
-      } else if (msg === CommandList._generals.botOff.x) {
-        main.general.botOn("Adios mundo cruel 😩", message);
-      } else if (msg === CommandList._main.main) {
-        main.general.main(message);
-      } else if (msg === CommandList._generals.Everyone.x) {
-        main.general.Everyone(message);
-      } else if (msg.startsWith(CommandList._generals.testGay.x)) {
-        main.general.test_gay(message);
-      } else if (msg.startsWith(CommandList._search.LyricSearch.x)) {
-        main.Search.LyricSearch(message);
-      } else if (msg.startsWith(CommandList._search.GetLyric.x)) {
-        main.Search.GetLyric(message);
-      } else if (msg.startsWith(CommandList._search.GlySearch.x)) {
-        main.Search.GlySearch(message);
-      } else if (msg.startsWith(CommandList._search.Pokemon.x)) {
-        main.Search.Pokemon(message);
-      } else if (msg.startsWith(CommandList._search.Pinterest.x)) {
-        main.Search.Pinterest(message);
-      } else if (msg.startsWith(CommandList._search.ImgByGoogle.x)) {
-        main.Search.ImgByGoogle(message);
-      } else if (msg.startsWith(CommandList._search.ImgByBing.x)) {
-        main.Search.ImgByBing(message);
-      } else if (msg.startsWith(CommandList._search.TikTokSearch.x)) {
-        main.Search.TikTokSearch(message);
-      } else if (msg.startsWith(CommandList._AI.chatgpt.x)) {
-        main.AI.ChatGPT(message);
-      } else if (msg.startsWith(CommandList._AI.Bingchat.x)) {
-        main.AI.Bingchat(message);
-      } else if (msg.startsWith(CommandList._AI.gpt4.x)) {
-        main.AI.Gpt4(message);
-      } else if (msg.startsWith(CommandList._AI.Gemini.x)) {
-        main.AI.Gemini(message);
-      } else if (msg.startsWith(CommandList._AI.Simi.x)) {
-        main.AI.Simi(message);
-      } else if (msg === CommandList._Anime.neko.x) {
-        main.Anime.loli(message);
-      } else if (msg === CommandList._Anime.loli.x) {
-        main.Anime.foxgirl(message);
-      } else if (msg === CommandList._Anime.lolipc.x) {
-        main.Anime.lolipc(message);
-      } else if (msg === CommandList._nsfw.china.x) {
-        main.Anime.neko(message);
-      } else if (msg.startsWith(CommandList._nsfw.japan.x)) {
-        main.Nsfw.Rule34(message);
-      } else if (msg === CommandList._nsfw.boobs.x) {
-        main.Nsfw.Asian(message);
-      } else if (msg === CommandList._nsfw.girls.x) {
-        main.Nsfw.Japan(message);
-      } else if (msg === CommandList._nsfw.rule34.x) {
-        main.Nsfw.Boobs(message);
-      } else if (msg === CommandList._nsfw.boobs.x) {
-        main.Nsfw.Pack(message);
+        return
+      } else if (msg === CommandList.general.botOff.x) {
+        CommandList.general.botON.exec(message,"Adios mundo cruel 😩");}
+       else if (msg === CommandList.general.Everyone.x) {
+        CommandList.general.Everyone.exec(message);
+      } else if (msg.startsWith(CommandList.general.testGay.x)) {
+        CommandList.general.testGay.exec(message);
+      } else if (msg.startsWith(CommandList.Search.LyricSearch.x)) {
+        CommandList.Search.LyricSearch.exec(message);
+      } else if (msg.startsWith(CommandList.Search.GetLyric.x)) {
+        CommandList.Search.GetLyric.exec(message);
+      } else if (msg.startsWith(CommandList.Search.GlySearch.x)) {
+        CommandList.Search.GlySearch.exec(message);
+      } else if (msg.startsWith(CommandList.Search.Pokemon.x)) {
+        CommandList.Search.Pokemon.exec(message);
+      } else if (msg.startsWith(CommandList.Search.Pinterest.x)) {
+        CommandList.Search.Pinterest.exec(message);
+      } else if (msg.startsWith(CommandList.Search.ImgByGoogle.x)) {
+        CommandList.Search.ImgByGoogle.exec(message);
+      } else if (msg.startsWith(CommandList.Search.ImgByBing.x)) {
+        CommandList.Search.ImgByBing.exec(message);
+      } else if (msg.startsWith(CommandList.Search.TikTokSearch.x)) {
+        CommandList.Search.TikTokSearch.exec(message);
+      } else if (msg.startsWith(CommandList.AI.chatgpt.x)) {
+        CommandList.AI.chatgpt.exec(message);
+      } else if (msg.startsWith(CommandList.AI.Bingchat.x)) {
+        CommandList.AI.Bingchat.exec(message);
+      } else if (msg.startsWith(CommandList.AI.gpt4.x)) {
+        CommandList.AI.gpt4.exec(message);
+      } else if (msg.startsWith(CommandList.AI.Gemini.x)) {
+        CommandList.AI.Gemini.exec(message);
+      } else if (msg.startsWith(CommandList.AI.Simi.x)) {
+        CommandList.AI.Simi.exec(message);
+      } else if (msg === CommandList.Anime.neko.x) {
+        CommandList.Anime.loli.exec(message);
+      } else if (msg === CommandList.Anime.loli.x) {
+        CommandList.Anime.foxgirl.exec(message);
+      } else if (msg === CommandList.Anime.lolipc.x) {
+        CommandList.Anime.lolipc.exec(message);
+      } else if (msg === CommandList.Nsfw.china.x) {
+        CommandList.Anime.neko.exec(message);
+      } else if (msg.startsWith(CommandList.Nsfw.japan.x)) {
+        CommandList.Nsfw.japan.exec(message);
+      } else if (msg === CommandList.Nsfw.boobs.x) {
+        CommandList.Nsfw.boobs.exec(message);
+      } else if (msg === CommandList.Nsfw.girls.x) {
+        CommandList.Nsfw.girls.exec(message);
+      } else if (msg === CommandList.Nsfw.rule34.x) {
+        CommandList.Nsfw.rule34.exec(message);
+      } else if (msg === CommandList.Nsfw.boobs.x) {
+        CommandList.Nsfw.boobs.exec(message);
       }
       /*   
 
@@ -155,11 +153,11 @@ export class clientFunc {
             else if (msg.startsWith('!yts')) {
     
                 const expresionRegular = /!yts(.+)/;
-                const searchText = msg.match(expresionRegular);
-                if (searchText && searchText.length > 1) {
+                const SearchText = msg.match(expresionRegular);
+                if (SearchText && SearchText.length > 1) {
                     message.react('📺')
     
-                    const parteCapturada = searchText[1].trim();
+                    const parteCapturada = SearchText[1].trim();
                     sendReply(`🤖Buscando en youtube ${parteCapturada}...`)
                     const data = await youtubeSearch(parteCapturada)
                     let text = ''
@@ -178,7 +176,7 @@ export class clientFunc {
                     const media = await MessageMedia.fromUrl(data.results[0].img, { unsafeMime: true })
                     sendReply(media, `
             class-yts
-            🌟🔍 *¡Resultados de ${data.search}* 🔍🌟
+            🌟🔍 *¡Resultados de ${data.Search}* 🔍🌟
             ${schemas.ytsResultHeader.text}
             ${text}
             ${schemas.lazaroFooter.text}
@@ -192,11 +190,11 @@ export class clientFunc {
             else if (msg.startsWith('!ytd')) {
                 //!necesita mantenimiento
                 const regex = /!ytd(.+)/;
-                const searchLink = msg.match(regex);
-                if (searchLink && searchLink.length > 1) {
+                const SearchLink = msg.match(regex);
+                if (SearchLink && SearchLink.length > 1) {
                     message.react('👾')
     
-                    const clearSearchLink = searchLink[1].trim();
+                    const clearSearchLink = SearchLink[1].trim();
                     sendReply(`🤖Porfavor espere un momento...`)
                     const obj = await youtubeDwonMedia(clearSearchLink)
                     const media = await MessageMedia.fromUrl(obj.cover)
@@ -248,11 +246,11 @@ export class clientFunc {
             else if (msg.startsWith('!nvs') || msg.startsWith('!nvc')) {
     
                 const regex = msg.startsWith('!nvs') ? /!nvs(.+)/ : /!nvc(.+)/;
-                const searchText = msg.match(regex);
-                if (searchText && searchText.length > 1) {
+                const SearchText = msg.match(regex);
+                if (SearchText && SearchText.length > 1) {
                     message.react('📚')
                     const url = msg.startsWith('!nvs') ? 'http://localhost:1024/services/nvs?q=' : 'http://localhost:1024/services/nvs-c?q='
-                    const text = searchText[1].trim();
+                    const text = SearchText[1].trim();
                     sendReply(`buscando ${text}...`)
                     const data = await axios.get(`${url}${text}`)
                     let textResult = ''
@@ -292,10 +290,10 @@ export class clientFunc {
             }
             else if (msg.startsWith('!nvi')) {
                 const regex = /!nvi(.+)/;
-                const searchText = msg.match(regex);
-                if (searchText && searchText.length > 1) {
+                const SearchText = msg.match(regex);
+                if (SearchText && SearchText.length > 1) {
                     message.react('📕')
-                    const text = searchText[1].trim();
+                    const text = SearchText[1].trim();
                     sendReply(`buscando ${text}...`)
                     const data = await axios.get(`http://localhost:1024/services/nvi?q=${text}`)
                     const element = data.data
@@ -339,12 +337,12 @@ export class clientFunc {
             else if (msg.startsWith('!nvd')) {
                 const regex = /!nvd(.+)/;
                 console.log(msg)
-                const searchText = msg.match(regex);
-                console.log(searchText)
-                if (searchText[1].length > 1) {
+                const SearchText = msg.match(regex);
+                console.log(SearchText)
+                if (SearchText[1].length > 1) {
                     message.react('📥')
     
-                    const text = searchText[1].trim();
+                    const text = SearchText[1].trim();
                     sendReply('descaragando pdf de ' + text + ' 📄 Antes de enviar el PDF, queremos informarte de que el proceso puede tardar entre 1 y 2 minutos. Por favor, ten paciencia durante este tiempo. Si después de esperar este período no recibes nada, por favor inténtalo de nuevo. ¡Gracias por tu comprensión! 🕒')
     
                     const media = await MessageMedia.fromUrl(`http://localhost:1024/services/pdf/${text}`, { unsafeMime: true, sendAsDocument: true })
@@ -370,12 +368,12 @@ export class clientFunc {
             else if (msg.startsWith('!tts')) {
                 const regex = /!tts(.+)/;
                 console.log(msg)
-                const searchText = msg.match(regex);
-                console.log(searchText)
+                const SearchText = msg.match(regex);
+                console.log(SearchText)
     
-                if (searchText[1].length > 1) {
+                if (SearchText[1].length > 1) {
                     message.react('🎶')
-                    const text = searchText[1].trim();
+                    const text = SearchText[1].trim();
                     if (text.length > 100) {
                         sendReply('tu texto no puede contener mas 100 caracteres, envia algo mas corto porfavor')
                     } else {
@@ -390,7 +388,7 @@ export class clientFunc {
                 }
             }
             else if (msg === '!menu2') {
-                const media = await MessageMedia.fromUrl('https://as1.ftcdn.net/v2/jpg/01/65/36/64/1000_F_165366471_TAR6S3WcNuDfsbZQ6aaMC5UxzNYuJkId.jpg')
+                const media = await MessageMedia.fromUrl('https://as1.ftcdn.net/v2/jpg/01/65/36/64/1000F165366471TAR6S3WcNuDfsbZQ6aaMC5UxzNYuJkId.jpg')
                 sendReply(media,
                     '*Menu de frases* \n' +
                     '<-------0------>' +
@@ -446,7 +444,7 @@ export class clientFunc {
                 const chat = await message.getChat()
                 console.clear()
                 const metionUser = await message.getMentions()
-                console.log(message)
+                console.log.exec(message)
                 console.log('======================')
                 console.log(metionUser)
                 console.log('<|--------------------------------|>')
@@ -459,7 +457,7 @@ export class clientFunc {
                         console.log(sendText)
                         if (sendText && sendText[0].length >= 1) {
                             message.react('📮')
-                            client.sendMessage(metionUser[0].id._serialized, sendText[0].replace(':', ''))
+                            client.sendMessage(metionUser[0].id.serialized, sendText[0].replace(':', ''))
                             client.sendMessage(message.from, 'mensaje enviado exitosamente')
                         } else {
                             message.react('❌')

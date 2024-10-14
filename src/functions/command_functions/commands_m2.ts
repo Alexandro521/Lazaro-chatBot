@@ -1,5 +1,5 @@
 import axios from "axios";
-import { client } from "../../../index";
+import { client } from "../../index";
 import { MessageMedia, Message, GroupChat } from "whatsapp-web.js";
 
 export class CommandsMedia {

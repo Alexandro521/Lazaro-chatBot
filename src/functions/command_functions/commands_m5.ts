@@ -1,18 +1,18 @@
 import axios from "axios";
-import { client } from "../../../index";
+import { client } from "../../index";
 import { MessageMedia, Message, GroupChat } from "whatsapp-web.js";
 import { error } from "console";
-import { ApiUrl } from "../../../data/DelirusApisUrls";
+import { ApiUrl } from "../../data/DelirusApisUrls";
 export class CommandsSearch {
-  static async LyricSearch(message: Message) {
+  static async LyricSearch({Message}:{Message: Message}) {
     try {
-      const msg =message.body 
+      const msg =Message.body 
       const regex = /(!lyricSearch)(.+)\w+/g;
     const text = msg.match(regex);
     console.log(text,msg);
 
     if (!(text[2].length > 1 || !text[2])) {
-      await message.reply("🤖 Debes Especificar un texto a buscar");
+      await Message.reply("🤖 Debes Especificar un texto a buscar");
       return;
     }
     const request = await axios.get(ApiUrl.Search.genius+(text[1].trim()));
@@ -29,31 +29,31 @@ export class CommandsSearch {
     const media = await MessageMedia.fromUrl(dataArray[0].image, {
       unsafeMime: true,
     });
-    await message.reply(
+    await Message.reply(
       media,
       `resultados de ${text[1].trim()}\n` +
         `📎${dataArray.length} Resultados \n \n` +
         sendText
     );
     } catch (error) { console.log(error)}
-    await message.reply("Ups a ocurrido un error :\n\n" + error)
+    await Message.reply("Ups a ocurrido un error :\n\n" + error)
   }
-  static async GetLyric(message: Message) {
-    const text = message.body.match(/!getLyric(.+)/);
+  static async GetLyric({Message}:{Message: Message}) {    
+    const text = Message.body.match(/!getLyric(.+)/);
 
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
       return;
     }
     const data = await axios.get(
       "https://delirius-api-oficial.vercel.app/api/lyrics?url=" + text[1]
     );
-    message.reply("Aqui esta la letra de tu cancion  \n \n" + data.data.lyrics);
+    Message.reply("Aqui esta la letra de tu cancion  \n \n" + data.data.lyrics);
   }
-  static async GlySearch(message: Message) {
-    const text = message.body.match(/!GLYSearch(.+)/);
+  static async GlySearch({Message}:{Message: Message}) {
+    const text = Message.body.match(/!GLYSearch(.+)/);
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
       return;
     }
     const data = await axios.get(
@@ -61,17 +61,17 @@ export class CommandsSearch {
     );
     const obj = data.data;
     const media = await MessageMedia.fromUrl(obj.data.image);
-    await message.reply(
+    await Message.reply(
       media,
       `*🎶${data.data.data.fullTitle}*\n\n` +
         `- 🎙 Artista: ${obj.data.artist} \n` +
         `- ✒ liryc: {${obj.data.lyrics}} \n\n\n`
     );
   }
-  static async Pokemon(message: Message) {
-    const text = message.body.match(/!Pokemon(.+)/);
+  static async Pokemon({Message}:{Message: Message}) {
+    const text = Message.body.match(/!Pokemon(.+)/);
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
       return;
     }
     const media = await MessageMedia.fromUrl(
@@ -82,13 +82,13 @@ export class CommandsSearch {
         unsafeMime: true,
       }
     );
-    await message.reply(media);
+    await Message.reply(media);
   }
-  static async Pinterest(message: Message) {
-    const text = message.body.match(/!pinterest(.+)/);
+  static async Pinterest({Message}:{Message: Message}) {
+    const text = Message.body.match(/!pinterest(.+)/);
 
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
     }
     console.log(text[1]);
     const data = await axios.get(
@@ -101,12 +101,12 @@ export class CommandsSearch {
     const media = await MessageMedia.fromUrl(arr[randomNumber].media.url, {
       unsafeMime: true,
     });
-    await message.reply(media, arr[randomNumber].title);
+    await Message.reply(media, arr[randomNumber].title);
   }
-  static async ImgByBing(message: Message) {
-    const text = message.body.match(/!img_Bing(.+)/);
+  static async ImgByBing({Message}:{Message: Message}) {
+    const text = Message.body.match(/!img_Bing(.+)/);
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
     }
 
     const data = await axios.get(
@@ -117,12 +117,12 @@ export class CommandsSearch {
     const media = await MessageMedia.fromUrl(arr[randomNumber].thumbnail, {
       unsafeMime: true,
     });
-    await message.reply(media, arr[randomNumber].description);
+    await Message.reply(media, arr[randomNumber].description);
   }
-  static async ImgByGoogle(message: Message) {
-    const text = message.body.match(/!img(.+)/);
+  static async ImgByGoogle({Message}:{Message: Message}) {
+    const text = Message.body.match(/!img(.+)/);
     if (text[1].length > 1) {
-      await message.reply("especifica un texto a buscar");
+      await Message.reply("especifica un texto a buscar");
       return;
     }
     const data = await axios.get(
@@ -134,12 +134,12 @@ export class CommandsSearch {
     const media = await MessageMedia.fromUrl(arr[randomNumber].url, {
       unsafeMime: true,
     });
-    await message.reply(media);
+    await Message.reply(media);
   }
-  static async TikTokSearch(message: Message) {
-    const text = message.body.match(/!tik_tok(.+)/);
+  static async TikTokSearch({Message}:{Message: Message}) {
+    const text = Message.body.match(/!tik_tok(.+)/);
     if (!(text[1].length > 1)) {
-      await message.reply("!especifica un texto a buscar");
+      await Message.reply("!especifica un texto a buscar");
     }
     const data = await axios.get(
       `https://delirius-api-oficial.vercel.app/api/tiktoksearch?query=${text[1].trim}`
@@ -150,7 +150,7 @@ export class CommandsSearch {
       textResult +=
         "titulo: " + element.title + " \n link: " + element.hd + " \n \n";
     });
-    await message.reply("resultados de tu busqueda  \n \n" + textResult);
+    await Message.reply("resultados de tu busqueda  \n \n" + textResult);
   }
 }
 
