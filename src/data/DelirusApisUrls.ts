@@ -26,5 +26,8 @@ export const ApiUrl ={
         Gemini:"https://deliriusapi-official.vercel.app/ia/gemini?query=",
         BlackBox:"https://deliriusapi-official.vercel.app/ia/blackbox?q=",
 
+    },
+    tools:{
+      
     }
 }
