@@ -1,30 +1,31 @@
+const ApiIndexRoute = `https://deliriussapi-oficial.vercel.app`
 export const ApiUrl ={
     Search:{
-    genius: "https://deliriusapi-official.vercel.app/search/genius?q=",
-    geniusLyric: "https://deliriusapi-official.vercel.app/search/lyrics?parse=false&url=",
-    lyricsSearch: "https://deliriusapi-official.vercel.app/search/letra?query=",
-    tiktokSearch:" https://deliriusapi-official.vercel.app/search/tiktoksearch?query=",
-    YoutubeSearch:"https://deliriusapi-official.vercel.app/search/ytsearch?q=",
-    googleImg:"https://deliriusapi-official.vercel.app/search/gimage?query=",
-    googleSearch:"ttps://deliriusapi-official.vercel.app/search/googlesearch?query=",
-    bingImg:"https://deliriusapi-official.vercel.app/search/bingimage?query=",
-    npmSearch:"https://deliriusapi-official.vercel.app/search/npm?limit=20&q="
+    genius: `${ApiIndexRoute}/search/genius?q=`,
+    geniusLyric: `${ApiIndexRoute}/search/lyrics?parse=false&url=`,
+    lyricsSearch: `${ApiIndexRoute}/search/letra?query=`,
+    tiktokSearch:`${ApiIndexRoute}/search/tiktoksearch?query=`,
+    YoutubeSearch:`${ApiIndexRoute}/search/ytsearch?q=`,
+    googleImg:`${ApiIndexRoute}/search/gimage?query=`,
+    googleSearch:`ttps://deliriusapi-official.vercel.app/search/googlesearch?query=`,
+    bingImg:`${ApiIndexRoute}/search/bingimage?query=`,
+    npmSearch:`${ApiIndexRoute}/search/npm?limit=20&q=`
     },
     Nsfw:{
-        Rule34: "https://deliriusapi-official.vercel.app/search/rule34?query=",
-        Rule34_V2:"https://deliriusapi-official.vercel.app/search/rule34v2?page=0&query=",
-        gelbooru:"https://deliriusapi-official.vercel.app/search/gelbooru?query=",
-        Xnxx:"https://deliriusapi-official.vercel.app/search/xnxxsearch?query=",
-        CoreanImg:"https://deliriusapi-official.vercel.app/nsfw/corean",
-        Boobs:"https://deliriusapi-official.vercel.app/nsfw/boobs",
-        GirlsPack:"https://deliriusapi-official.vercel.app/nsfw/girls",
-        TikyokVideo:"https://deliriusapi-official.vercel.app/nsfw/tiktok",
+        Rule34: `${ApiIndexRoute}/search/rule34?query=`,
+        Rule34_V2:`${ApiIndexRoute}/search/rule34v2?page=0&query=`,
+        gelbooru:`${ApiIndexRoute}/search/gelbooru?query=`,
+        Xnxx:`${ApiIndexRoute}/search/xnxxsearch?query=`,
+        CoreanImg:`${ApiIndexRoute}/nsfw/corean`,
+        Boobs:`${ApiIndexRoute}/nsfw/boobs`,
+        GirlsPack:`${ApiIndexRoute}/nsfw/girls`,
+        TikyokVideo:`${ApiIndexRoute}/nsfw/tiktok`,
     },
     AI:{
-        chatGpt:"https://deliriusapi-official.vercel.app/ia/chatgpt?",
-        Bing:"https://deliriusapi-official.vercel.app/ia/bingia?query=",
-        Gemini:"https://deliriusapi-official.vercel.app/ia/gemini?query=",
-        BlackBox:"https://deliriusapi-official.vercel.app/ia/blackbox?q=",
+        chatGpt:`${ApiIndexRoute}/ia/chatgpt?`,
+        Bing:`${ApiIndexRoute}/ia/bingia?query=`,
+        Gemini:`${ApiIndexRoute}/ia/gemini?query=`,
+        BlackBox:`${ApiIndexRoute}/ia/blackbox?q=`,
 
     },
     tools:{

@@ -4,8 +4,6 @@ import { client } from "../../index";
 import { schemas } from "../../schemas/textSchemas";
 import { mangaHeaderInfo } from "../../interfaces/mangaHeaderInfo";
 import { MessageMedia,Message,GroupChat} from "whatsapp-web.js";
-import { CommandList } from "../../Admin/comandList";
-import { Auth } from "./Auth";
 
 export class Commands {
   static async botOn({ text, Message }: { text: string; Message: Message }) {

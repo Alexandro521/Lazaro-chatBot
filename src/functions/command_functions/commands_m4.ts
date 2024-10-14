@@ -1,6 +1,6 @@
 
 import { MessageMedia, Message} from "whatsapp-web.js";
-
+import { ApiUrl } from "../../data/DelirusApisUrls";
 export class CommandsAnime {
 private static async commandStruct(
     Message: Message,
@@ -33,7 +33,7 @@ static async lolipc({Message}:{Message: Message}) {
 }
 
 }
-/*
+/*q88u87
 | <--comandos de Anime-->
 
 - 🍚 *!loli* obten imagen de una loli

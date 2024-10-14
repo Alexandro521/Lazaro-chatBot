@@ -1,6 +1,6 @@
 import axios from "axios";
 import {Message} from "whatsapp-web.js";
-
+import { ApiUrl } from "../../data/DelirusApisUrls";
 export class CommandsAI {
     //nombre provisional
     private static async CommandsStruct(
@@ -17,28 +17,32 @@ export class CommandsAI {
 ) {
             try {
                 const text = Message.body.match(regex)
-                if (!(text[1].length > 1)) {
+                if (!(text[1].length > 1) || !text[1]) {
                     await Message.reply(option.anyTextSearhResponse);
                     return
                 }
                 const data = await axios.get(ApiRequesUrl+(text[1].trim()))
-                   await Message.reply(data.data.Message)            
+                if(data.status!==200){
+                    await Message.reply(option.requestFailResponse + data.statusText)
+                    return
+                }
+                await Message.reply(data.data.Message)            
             }catch(error){
                 console.log(error)
                 await Message.reply(option.requestFailResponse + error )
             }
     }
     static async ChatGPT({Message}:{Message: Message}) {
-        await this.CommandsStruct(Message, /!chatgpt(.+)/, `https://delirius-api-oficial.vercel.app/api/chatgpt?q=`)
+        await this.CommandsStruct(Message, /!chatgpt(.+)/, ApiUrl.AI.chatGpt)
     }
     static async Bingchat({Message}:{Message: Message}){
-        await this.CommandsStruct(Message, /!BingChat(.+)/, `https://delirius-api-oficial.vercel.app/api/bingia?query=`)
+        await this.CommandsStruct(Message, /!BingChat(.+)/, ApiUrl.AI.Bing)
     }
     static async Gpt4({Message}:{Message: Message}){
-        await this.CommandsStruct(Message, /!gpt-4(.+)/, `https://delirius-api-oficial.vercel.app/api/ia2?text=quien%20eres%20y%20quien%20es%20tu%20creador?&prompt=`)
+        await this.CommandsStruct(Message, /!gpt-4(.+)/, ApiUrl.AI.BlackBox)
     }
     static async Gemini({Message}:{Message: Message}){
-        await this.CommandsStruct(Message, /!Gemini(.+)/, `https://delirius-api-oficial.vercel.app/api/gemini?query=`)
+        await this.CommandsStruct(Message, /!Gemini(.+)/,ApiUrl.AI.Gemini)
     }
     static async Simi({Message}:{Message: Message}){
         await this.CommandsStruct(Message, /!simi(.+)/, `https://delirius-api-oficial.vercel.app/api/simi?text=`)

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { MessageMedia, Message} from "whatsapp-web.js";
-
+import { ApiUrl } from "../../data/DelirusApisUrls";
 export class CommandsNsfw {
  private static async CommandsStruct(
     Message: Message, 
@@ -20,16 +20,16 @@ export class CommandsNsfw {
             }
 }
 static async Asian({Message}:{Message: Message}) {
-    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/china`)
+    await this.CommandsStruct(Message, ApiUrl.Nsfw.CoreanImg)
  }
  static async Japan({Message}:{Message: Message}) {
-    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/japan`)
+    await this.CommandsStruct(Message, ApiUrl.Nsfw.GirlsPack)
  }
  static async Boobs({Message}:{Message: Message}) {
-    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/boobs`)
+    await this.CommandsStruct(Message, ApiUrl.Nsfw.Boobs)
  }
  static async Pack({Message}:{Message: Message}) {
-    await this.CommandsStruct(Message, `https://delirius-api-oficial.vercel.app/api/girls`)
+    await this.CommandsStruct(Message, ApiUrl.Nsfw.GirlsPack)
  }
  static async Rule34({Message}:{Message: Message}) {
     try {
@@ -38,8 +38,8 @@ static async Asian({Message}:{Message: Message}) {
             Message.reply("!especifica un texto a buscar");
             return;
         }
-            const res = await axios.get(`https://delirius-api-oficial.vercel.app/api/rule34?query=${text[1].trim()}`)
-            if (!(res.status === 200)) {
+            const res = await axios.get(ApiUrl.Nsfw.Rule34+text[1].trim())
+            if (!(res.status !== 200)) {
                 throw new Error('Ups a ocurrido un error :/\n\n')
             }
              const arr = res.data.images
