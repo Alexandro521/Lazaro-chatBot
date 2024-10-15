@@ -1,7 +1,7 @@
 
 import{Client} from 'whatsapp-web.js';
 const {Config} = require('./config/clientConfig')
-import {clientFunc} from './functions/clientFunctions'
+import {clientFunc} from './functions/clientHandlleFuncs'
 
 export const client = new Client(Config);
  

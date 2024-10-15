@@ -576,7 +576,26 @@ interface Artist {
     number: string
   }
   
+ type ChatGpt = {
+    creator: string
+    status: boolean
+    data: string
+  }
+  
+   type ChatgptWeb = {
+    code: number
+    status: boolean
+    gpt: string
+    original: any
+  }
+  type Gemini = ChatGpt
+  type Blackbox = ChatGpt
+
   export {
+    ChatGpt,
+    ChatgptWeb,
+    Gemini,
+    Blackbox,
     GeniusSearchResponse,
     LyricsResponse,
     TikTokSearchResponse,
