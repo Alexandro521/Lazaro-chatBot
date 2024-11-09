@@ -1,21 +1,14 @@
 import { Message } from "whatsapp-web.js";
-export interface CommandList {
-    main: Main
-    general: General
+export type CommandList = {
+    '!menu1': Command
+    '!bot on': Command
+    '!C_Close': Command
+    '!Goodbye world': Command
   }
-  
-  export interface Main {
-    main: string
-    menu1: Command
-  }
-  
-  export interface General {
-    botOn: Command
-  }
-  
   export interface Command {
     c_name: string
-    on: ({ text,Message }: { text: string; Message: Message }) => void
+    init: ({Message}:{Message:Message}) => void
+   // on: ({ text,Message }: { text: string; Message: Message }) => void
     props: Props
   }
   

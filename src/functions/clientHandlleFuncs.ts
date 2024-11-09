@@ -1,46 +1,37 @@
-import { client } from "../bot";
-import { GroupNotification, Message} from "whatsapp-web.js";
-import { commandList } from "../Admin/comandList";
-const qrcode = require("qrcode-terminal");
+import { Chat, Message,GroupChat} from "whatsapp-web.js";
+// import { blacklist } from "./blacklist"
+// import { client } from "../index"
+import chalk from 'chalk';
+import { client } from "..";
+import { blacklist } from "../data/blacklist";
+import { commandList } from "../config/comandConfig";
+import { commandExec } from "../functions/auth/commandAuth";
 
-export class clientFunc {
-  static async Ready() {
-    console.log("Client is ready!");
+let state = false
+    async  function messageInfo(message: Message,chat: Chat) {
+    console.log(chalk.greenBright('...........................| Mensaje recibido |...............................'))
+    console.log(chalk.redBright('proveniente de:'),chalk.yellowBright(message.from))
+    console.log(chalk.redBright('Autor:'), chalk.blue(message.author))
+    console.log(chalk.redBright('mensaje:'),chalk.greenBright(message.body))
+    console.log(chalk.redBright('message ID:'),chalk.yellowBright(message.id._serialized))
+    console.log(chalk.redBright('chat ID:'),chalk.yellowBright(chat.id._serialized))
+    console.log(chalk.greenBright('.............................................................................'))
   }
-  static async Auth() {
-    console.log("AUTHENTICATED");
-  }
-  static async Loading(percent: string, message: string) {
-    console.log("LOADING SCREEN", percent, message);
-  }
-  static async AuthError(error: string) {
-    console.log("AUTH ERROR", error);
-  }
-  static async QR(qr: string) {
-    const code = qrcode.generate(qr, { small: true });
-    console.log("QR CODE", code);
-  }
-  static async AdminChange(notification: GroupNotification) {
-    console.log("Adimistrador")
-  }
-  static async GroupLeave(notification: GroupNotification) {
-    console.log("leave", notification);
-  }
-  static GroupUpdate(notification: GroupNotification) {
-    // Group picture, subject or description has been updated.
-    console.log("update", notification);
-  }
-  static async GroupJoin(notification: GroupNotification) {
-
-  }
-  static async MessageRevokeEveryone(after: Message, before: Message) {
-
-  }
-  static async MessageCreate(Message: Message) {
-      console.log(Message.body)
-      if (Message.body === commandList.general.botOn.c_name) {
-            commandList.general.botOn.on({text:"Hola mundo 🌎",Message});
-      } 
-    } 
-  }
-
+export class ClientHandlle{
+  static async onMessageCreate(message: Message) {
+      try{
+        const chat = await message.getChat();  
+        messageInfo(message,chat)
+        if(message.body.startsWith("!")){
+        await commandExec(message.body,message)
+        }
+      }catch(e){
+        console.log(e)
+        console.log(chalk.redBright(e))
+        let err = JSON.stringify(e)
+        await message.reply(err,message.from)
+      }
+    
+    }
+  
+}
