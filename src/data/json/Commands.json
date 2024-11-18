@@ -1,0 +1,82 @@
+{
+	"!set_sudo": {
+		"id": "!set_sudo",
+		"is_only_groups": true,
+		"is_global_enable": false,
+		"only_admins": true,
+		"description": "otorga rol de super usuario a un mienbro del grupo, estos usuarios podran utilizar lo comandos con privilegios de administrador",
+		"options": "-info"
+	},
+	"!G_enable": {
+		"id": "!G_enable",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "habilita o desabilita un comando globalmente",
+		"options": "-info"
+	},
+	"!G_only_Admins": {
+		"id": "!G_only_Admins",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "not description",
+		"options": "-info"
+	},
+	"!enable": {
+		"id": "!enable",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "habilita o desabilita un comando para este grupo",
+		"options": "-info"
+	},
+	"!restrict": {
+		"id": "!restrict",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "establece que un usuario del grupo no pueda usar x comando",
+		"options": "-info"
+	},
+	"!main": {
+		"id": "!main",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "obten la lista de todos los comandos del bot",
+		"options": "-info"
+	},
+	"!only_Admins": {
+		"id": "!only_Admins",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "establece el uso de este comando unicamente para los administradores del grupo",
+		"options": "-info"
+	},
+	"!unsudo": {
+		"id": "!unsudo",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "elimina a un super usario",
+		"options": "-info"
+	},
+	"!rm": {
+		"id": "!rm",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": true,
+		"description": "elimina un usuario del grupo",
+		"options": "-info"
+	},
+	"!get_config": {
+		"id": "!get_config",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	}
+}

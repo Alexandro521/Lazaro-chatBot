@@ -1,5 +1,6 @@
 node_modules
 AuthData
 dist
-spck.config.json
+
 test.js
+.env

@@ -1,18 +1,42 @@
-
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
+    "lib": [
+      "ESNext"
+    ],
+    "target": "ESNext",
+    "module": "ESNext",
+    "types": [
+      "bun-types"
+    ],
+    //"moduleDetection": "force",
+    "allowJs": true,
     "outDir": "./dist",
     "rootDir": "./src",
-   "strictNullChecks": false,
+    "strictNullChecks": false,
     "noImplicitAny": false,
     "strict": false,
     "esModuleInterop": true,
-  "allowSyntheticDefaultImports": true,
-    "typeRoots": ["./node_modules/@types"]    
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": false,
+    
+    "noEmit": true,
+    "paths": {
+      "@config/":["./src/config/"],
+      "@functions/":["./src/functions/"],
+      "@interfaces/":["./src/interfaces/"],
+      "@data/":["./src/data/"],
+      "@json/":["./src/data/json/"],
+      "@DB/":["./src/DB/"],
+      "@CommandsAuth/":["./src/CommandsAuth/"]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules","test.mjs"] 
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "test.mjs"
+  ]
 }
- 

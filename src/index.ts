@@ -1,30 +1,15 @@
 
-import { Client } from "whatsapp-web.js";
-import { LocalAuth} from "whatsapp-web.js"
-import { ClientHandlle } from "./functions/clientHandlleFuncs";
 import qrCode from "qrcode-terminal";
 import chalk from 'chalk';
+import { onMessageCreate } from "./functions/clientHandlleFuncs";
+import { getCommandList } from "./functions/initJSonCreator";
+import { clientConfig } from "./config/clientConfig";
+import { Client } from "whatsapp-web.js";
 
-export const client = new Client({
-    puppeteer: {
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-accelerated-2d-canvas',
-            '--no-first-run',
-            '--no-zygote',
-            '--disable-gpu'
-        ]
-    },
-    webVersionCache: {
-        type: 'remote',
-        remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/v2.2410.1.html`,
-    },
-    authStrategy: new LocalAuth({
-        dataPath: "AuthData"
-    }),
-});
+await getCommandList()
+
+export const client = new Client(clientConfig);
+
 client.on('authenticated', ()=>{
     console.log(chalk.blue("Authenticated"))
 })
@@ -38,12 +23,27 @@ client.on('disconnected',(reason)=>{
 client.on('qr',(qr)=>{
     qrCode.generate(qr,{small:true})
 })
-
 client.on('ready',async ()=>{
     console.log(chalk.blue("Ready"))
+   /* const chats = await client.getChats()
+    const insert:insertType = []
+    chats.forEach(async (chat)=>{
+
+        console.log(chalk.cyanBright('----------------------------------'))
+            console.log(chalk.greenBright(chat.name))
+            console.log(chalk.redBright(chat.id._serialized))
+            console.log(chalk.yellowBright(chat.isGroup))
+            console.log(chalk.cyanBright('----------------------------------'))
+        
+        insert.push({id:chat.id._serialized,is_group:chat.isGroup,chat_name:chat.name})
+
+        
+    })
+    await CommandsConfig.register_chat(insert)
+    */
 })
 
-client.on('message_create',ClientHandlle.onMessageCreate)
+client.on('message_create',onMessageCreate)
 
 
 client.initialize();
