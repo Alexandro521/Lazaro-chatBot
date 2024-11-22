@@ -2,12 +2,13 @@
 import qrCode from "qrcode-terminal";
 import chalk from 'chalk';
 import { onMessageCreate } from "./functions/clientHandlleFuncs";
-import { getCommandList } from "./functions/initJSonCreator";
 import { clientConfig } from "./config/clientConfig";
 import { Client } from "whatsapp-web.js";
 
-await getCommandList()
 
+// console.time("init")
+// await sleep(5000)
+//console.timeEnd("end")
 export const client = new Client(clientConfig);
 
 client.on('authenticated', ()=>{
@@ -25,22 +26,6 @@ client.on('qr',(qr)=>{
 })
 client.on('ready',async ()=>{
     console.log(chalk.blue("Ready"))
-   /* const chats = await client.getChats()
-    const insert:insertType = []
-    chats.forEach(async (chat)=>{
-
-        console.log(chalk.cyanBright('----------------------------------'))
-            console.log(chalk.greenBright(chat.name))
-            console.log(chalk.redBright(chat.id._serialized))
-            console.log(chalk.yellowBright(chat.isGroup))
-            console.log(chalk.cyanBright('----------------------------------'))
-        
-        insert.push({id:chat.id._serialized,is_group:chat.isGroup,chat_name:chat.name})
-
-        
-    })
-    await CommandsConfig.register_chat(insert)
-    */
 })
 
 client.on('message_create',onMessageCreate)

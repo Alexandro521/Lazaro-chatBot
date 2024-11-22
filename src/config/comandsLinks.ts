@@ -47,5 +47,70 @@ export const commandLinks = {
     '!get_config':{
         init: async (Message:Message)=>{
         await CommandHandlle.getConfig(Message)}
+    },
+    '!todos':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.Everyone(Message)}
+    },
+    '!test_gay':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.testGay(Message)}
+    },
+    '!pinterest':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.pinterestv1(Message)}
+    },
+    '!img':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.googleImages(Message)}
+    },
+    '!pinterestv2':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.pinterestv2(Message)}
+    },
+    '!stk':{
+        init: async (Message:Message)=>{
+        await CommandHandlle.stickerCreate(Message)}
+    },
+    '!test': {
+        init: async (Message: Message) => {
+            await CommandHandlle.test(Message)
+        }
+    },
+    '!mp3': {
+        init: async (Message: Message) => {
+            await CommandHandlle.mp3(Message)
+        }
+    },
+    '!mp4': {
+        init: async (Message: Message) => {
+            await CommandHandlle.mp4(Message)
+        }
+    },
+    '!yts': {
+        init: async (Message: Message) => {
+            await CommandHandlle.yts(Message)
+        }
+    },
+    '!wallpaper': {
+        init: async (Message: Message) => {
+            await CommandHandlle.walppaper(Message)
+        }
+    },
+    '!ttks': {
+        init: async (Message: Message) => {
+            await CommandHandlle.ttks(Message)
+        },
+       
+    },
+    '!ttkg': {
+        init: async (Message: Message) => {
+            await CommandHandlle.ttkget(Message)
+        }
+    },
+    '!only_Groups': {
+        init: async (Message: Message) => {
+            await CommandHandlle.onlyGroups(Message)
+        }
     }
 }

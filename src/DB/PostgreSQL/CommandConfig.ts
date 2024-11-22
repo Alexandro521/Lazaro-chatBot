@@ -71,20 +71,21 @@ export default class CommandsConfig{
             return {status:500}
         }
     }
-    static async removeUserFromBanList(chat_id: string, command_id: string, user: string) {
+    static async removeUserFromBanList(banList:bannedUser) {
         try {
-            const { data, error } = await supabase.from('banned_user').delete()
-            .eq('chat_id', chat_id)
-            .eq('command_id', command_id)
-            .eq('banned_user', user);
-            
-            if (error) throw new Error(error.message)
-            return {
-                status: 201,
-                message: 'User removed from ban list',
-                user,
-                command_id
-            }
+            banList.map(async (item)=>{
+                const { data, error } = await supabase.from('banned_user').delete()
+                .eq('chat_id', item.chat_id)
+                .eq('command_id', item.command_id)
+                .eq('banned_user', item.banned_user);
+                if (error) throw new Error(error.message)
+                return {
+                    status: 201,
+                    message: 'User removed from ban list',
+                    user: item.banned_user,
+                    command_id: item.command_id
+                }
+            })
         } catch (err) {
             console.log(err)
             return {status:500}

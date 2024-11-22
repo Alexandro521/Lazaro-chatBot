@@ -1,6 +1,9 @@
 node_modules
 AuthData
 dist
+static/audio/*
+static/img/*/*
+static/video/*
 
 test.js
 .env

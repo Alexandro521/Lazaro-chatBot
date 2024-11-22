@@ -4,6 +4,7 @@ import { Message,Chat } from "whatsapp-web.js"
 export function messageInfo(message: Message,chat: Chat) {
     console.log(chalk.greenBright('...........................||> Mensaje recibido <||...............................'))
     console.log(chalk.redBright('chat:'),chalk.yellowBright(chat.name))
+    console.log(chalk.redBright('numero:'),chalk.yellowBright(chat.isGroup))
     console.log(chalk.redBright('proveniente de:'),chalk.yellowBright(message.from))
     console.log(chalk.redBright('Autor:'), chalk.blue(message.author))
     console.log(chalk.redBright('mensaje:'),chalk.greenBright(message.body))

@@ -590,41 +590,139 @@ interface Artist {
   }
   type Gemini = ChatGpt
   type Blackbox = ChatGpt
+export type wallpaper  = {
+  creator: string;
+  status: boolean;
+  data: Array<{
+    title: string;
+    thumbnail: string;
+    image: string;
+  }>;
+};
 
-  export {
-    ChatGpt,
-    ChatgptWeb,
-    Gemini,
-    Blackbox,
-    GeniusSearchResponse,
-    LyricsResponse,
-    TikTokSearchResponse,
+export type tiltokSearch = {
+  creator: string;
+  status: number;
+  meta: Array<{
+    id: string;
+    title: string;
+    region: string;
+    hd: string;
+    duration: number;
+    play: number;
+    coment: number;
+    share: number;
+    like: number;
+    download: number;
+    publish: number;
+    url: string;
+    author: {
+      id: string;
+      username: string;
+      nickname: string;
+      avatar: string;
+    };
+  }>;
+};
+
+  type pinterest = {
+    creator: string
+    status: boolean
+    data: Array<{
+      id: string
+      title: string
+      name: string
+      username: string
+      profile_image: string
+      followers: number
+      description: string
+      likes: number
+      created_at: string
+      image: string
+    }>
+  }
+ type GoogleImagesResponse = {
+    creator: string;
+    status: boolean;
+    data: Array<{
+      url: string;
+      width: number;
+      height: number;
+      preview: string;
+      origin: {
+        title: string;
+        website: {
+          domain: string;
+          url: string;
+        };
+      };
+    }>;
+  };
+type Pinterestv1 = {
+  status: boolean;
+  creator: string;
+  result: Array<string>;
+};
+
+export type yts = {
+  creator: string;
+  status: boolean;
+  data: Array<{
+    type: string;
+    videoId: string;
+    url: string;
+    title: string;
+    description: string;
+    image: string;
+    thumbnail: string;
+    publishedAt: string;
+    duration: string;
+    views: number;
+    isLive: boolean;
+    author: {
+      name: string;
+      url: string;
+    };
+  }>;
+};
+
+export {
+    Pinterestv1,
+    GoogleImagesResponse,
     YouTubeSearchResponse,
-    SpotifySearchResponse,
+    URLCheckResponse,
+    TranslationResponse,
     TrackResponse,
-    PinterestImageResponse,
-    AppleMusicResponse,
+    TikTokStalkResponse,
+    TikTokSearchResponse,
+    TenorResponse,
+    SpotifySearchResponse,
+    SoundCloudResponse,
+    SimiResponse,
     Rule34Response,
+    PinterestImageResponse,
+    pinterest,
+    NPMResponse,
+    NoticiasResponse,
+    MovieResponse,
+    MojitoResponse,
+    MixedEmojiResponse,
+    LyricsResponse,
+    HTMLExtractResponse,
+    GoogleSearchResponse,
     GImageResult,
     GImageResponse,
-    GoogleSearchResponse,
-    MovieResponse,
+    GeniusSearchResponse,
+    Gemini,
+    EmojiInfoResponse,
+    DeezerResponse,
+    CountryResponse,
+    ChatgptWeb,
+    ChatGpt,
+    ChannelInfoResponse,
+    Blackbox,
     BingSearchResponse,
     BingImageResponse,
-    SoundCloudResponse,
-    DeezerResponse,
-    TenorResponse,
-    NPMResponse,
     AppStoreResponse,
-    URLCheckResponse,
-    HTMLExtractResponse,
-    TranslationResponse,
-    MojitoResponse,
-    SimiResponse,
-    NoticiasResponse,
-    TikTokStalkResponse,
-    MixedEmojiResponse,
-    ChannelInfoResponse,
-    EmojiInfoResponse,
-    CountryResponse
+    AppleMusicResponse,
   }

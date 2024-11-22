@@ -7,9 +7,12 @@ export const ApiUrl = {
     tiktokSearch: `${ApiIndexRoute}/search/tiktoksearch?query=`,
     YoutubeSearch: `${ApiIndexRoute}/search/ytsearch?q=`,
     googleImg: `${ApiIndexRoute}/search/gimage?query=`,
-    googleSearch: `ttps://deliriusapi-official.vercel.app/search/googlesearch?query=`,
+    googleSearch: `${ApiIndexRoute}/search/googlesearch?query=`,
+    pinterest: `${ApiIndexRoute}/search/pinterest?text=`,
+    pinterestv2: `${ApiIndexRoute}/search/pinterestv2?text=`,
     bingImg: `${ApiIndexRoute}/search/bingimage?query=`,
     npmSearch: `${ApiIndexRoute}/search/npm?limit=20&q=`,
+    wallpaper:"https://deliriussapi-oficial.vercel.app/search/wallpapers?q="
   },
   Nsfw: {
     Rule34: `${ApiIndexRoute}/search/rule34?query=`,
