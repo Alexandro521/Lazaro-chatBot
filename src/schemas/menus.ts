@@ -1,19 +1,4 @@
-export const youtubeResultsSchema = () => {
-    return {
-      head: (id: string, Search: string) =>`[t:yts ${id}]
 
-🔍Resultados de *${Search}*
-`,
-      body:(count,title: string,duration: string,url: string,canal: string) => `\n
-『${count}』⤵
-  ␥✒title: *${title}*
-  ␥🕙duration: *${duration}*
-  ␥📎 url: *${url}*
-  ␥📺canal: *${canal}*
-_ _ _ _ _ _ _ _ _ _  _ _ _ _ _ _ _ _ _ _ _`,
-    };
-}
-    
 
 export const main = `
 *Bienvenido al menu Principal*

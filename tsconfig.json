@@ -28,8 +28,7 @@
       "@interfaces/":["./src/interfaces/"],
       "@data/":["./src/data/"],
       "@json/":["./src/data/json/"],
-      "@DB/":["./src/DB/"],
-      "@CommandsAuth/":["./src/CommandsAuth/"]
+      "@DB/":["./src/DB/"]
     }
   },
   "include": [

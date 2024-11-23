@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-extraneous-class */
 import { createClient, PostgrestError} from '@supabase/supabase-js'
 import 
 {
@@ -13,7 +14,7 @@ const API_KEY = process.env.publicAnonKey
 const URL = process.env.DbUrl
 const supabase = createClient(URL, API_KEY);
 
-export default class CommandsConfig{
+export default class CommandsdataBase{
     
     static async getBannedUsersList(chat_id:string,command_id:string){
         try{
@@ -45,7 +46,7 @@ export default class CommandsConfig{
     }
     static async addUserToBanList(banList:bannedUser) {
         try {
-            const { data, error } = await supabase.from('banned_user').insert(banList);
+            const {  error } = await supabase.from('banned_user').insert(banList);
 
             if (error) throw new Error(error.message)
             return {
@@ -59,7 +60,7 @@ export default class CommandsConfig{
     }
     static async addUserToOnlyList(onlyList:onlyUser) {
         try {
-            const { data, error } = await supabase.from('only_user').insert([onlyList]);
+            const {  error } = await supabase.from('only_user').insert([onlyList]);
             
             if (error) throw new Error(error.message)
             return {
@@ -74,7 +75,7 @@ export default class CommandsConfig{
     static async removeUserFromBanList(banList:bannedUser) {
         try {
             banList.map(async (item)=>{
-                const { data, error } = await supabase.from('banned_user').delete()
+                const {  error } = await supabase.from('banned_user').delete()
                 .eq('chat_id', item.chat_id)
                 .eq('command_id', item.command_id)
                 .eq('banned_user', item.banned_user);
@@ -93,7 +94,7 @@ export default class CommandsConfig{
     }
     static async removeUserFromOnlyList(chat_id: string, command_id: string, user: string) {
         try {
-            const { data, error } = await supabase.from('only_user').delete()
+            const {  error } = await supabase.from('only_user').delete()
             .eq('chat_id', chat_id)
             .eq('command_id', command_id)
             .eq('only_user', user);
@@ -110,7 +111,7 @@ export default class CommandsConfig{
             return {status:500}
         }
     }
-    static async getCommandsConfig(chat_id: string, command_id: string): Promise<functionReturn> {
+    static async getCommandsdataBase(chat_id: string, command_id: string): Promise<functionReturn> {
         try {
 
             const { data, error }: { data: getGroupConfigResponse, error: PostgrestError } = await supabase.rpc('get_command_configuration', { "chat": chat_id, "command": command_id });
@@ -121,14 +122,14 @@ export default class CommandsConfig{
             if (data.length === 0) {
                 throw new Error("No data")
             }
-            let super_users_list;
-            let only_users_list;
-            let banned_users_list;
+            let super_users_list=null;
+            let only_users_list=null;
+            let banned_users_list=null;
             const obj = {}
             const item = data[0]
-            super_users_list = await CommandsConfig.getSuperUsers(item.chatid)
-            only_users_list = await CommandsConfig.getOnlyUsersList(item.chatid, item.commands)
-            banned_users_list = await CommandsConfig.getBannedUsersList(item.chatid, item.commands)
+            super_users_list = await CommandsdataBase.getSuperUsers(item.chatid)
+            only_users_list = await CommandsdataBase.getOnlyUsersList(item.chatid, item.commands)
+            banned_users_list = await CommandsdataBase.getBannedUsersList(item.chatid, item.commands)
 
             const new_obj = {
                 ...item,
@@ -157,7 +158,7 @@ export default class CommandsConfig{
     }
     static async registerUser(id:string,number:string,as_name:string){
         try{
-            const {data, error} = await supabase.from('users').insert({id,number,as_name})
+            const {error} = await supabase.from('users').insert({id,number,as_name})
 
             if(error) return {status:500,data:error.message}
         
@@ -180,7 +181,7 @@ export default class CommandsConfig{
     }
     static async addSuperUser(super_list:superUser) {
         try{
-            const { data, error } = await supabase.from('super_users')
+            const { error } = await supabase.from('super_users')
             .insert(super_list);
             if(error) throw new Error(error.message)
             return {status:201,message:'Super user added'}
@@ -192,8 +193,9 @@ export default class CommandsConfig{
     static async removeSuperUser(super_list:superUser) {
         try{
            const promise = super_list.map(async (item)=>{
+            // eslint-disable-next-line no-async-promise-executor
             return new Promise(async (resolve,reject)=>{
-            const { data, error } = await supabase.from('super_users')
+            const { error } = await supabase.from('super_users')
             .delete()
             .eq('chat_id',item.chat_id)
             .eq('user_id',item.user_id);
@@ -218,7 +220,7 @@ export default class CommandsConfig{
     }
     static async setEnableCommnad(chat_id:string,command_id:string,isEnable:boolean){
         try{
-            const {data,error} = await supabase.from('group_command_config').update({enable:isEnable})
+            const {error} = await supabase.from('group_command_config').update({enable:isEnable})
             .eq('whatsapp_chat_id',chat_id)
             .eq('command_id',command_id)
             if(error) throw new Error(error.message)
@@ -230,7 +232,7 @@ export default class CommandsConfig{
     }
     static async setAdminOnlyCommnad(chat_id:string,command_id:string,isEnable:boolean){
         try{
-            const {data,error} = await supabase.from('group_command_config').update({only_admins:isEnable})
+            const {error} = await supabase.from('group_command_config').update({only_admins:isEnable})
             .eq('whatsapp_chat_id',chat_id)
             .eq('command_id',command_id)
             if(error) throw new Error(error.message)
@@ -242,7 +244,7 @@ export default class CommandsConfig{
     }
     static async setGlobalEnableCommnad(command_id:string,isEnable:boolean){
         try{
-            const {data,error} = await supabase.from('commands').update({is_global_enable:isEnable})
+            const {error} = await supabase.from('commands').update({is_global_enable:isEnable})
             .eq('id',command_id)
             if(error) throw new Error(error.message)
             return {status:201,message:'Command updated'}
@@ -253,7 +255,7 @@ export default class CommandsConfig{
     }
     static async setOnlyGroupCommnad(command_id:string,isEnable:boolean){
         try{
-            const {data,error} = await supabase.from('commands').update({is_only_groups:isEnable})
+            const {error} = await supabase.from('commands').update({is_only_groups:isEnable})
             .eq('id',command_id)
             if(error) throw new Error(error.message)
             return {status:201,message:'Command updated'}
@@ -264,7 +266,7 @@ export default class CommandsConfig{
     }
     static async setGlobalAdminOnlyGroupCommnad(command_id:string,isEnable:boolean){
         try{
-            const {data,error} = await supabase.from('commands').update({only_admins:isEnable})
+            const {error} = await supabase.from('commands').update({only_admins:isEnable})
             .eq('id',command_id)
             if(error) throw new Error(error.message)
             return {status:201,message:'Command updated'}
@@ -275,7 +277,7 @@ export default class CommandsConfig{
     }
     static async updateCommandDescription(command_id,Description:string){
         try{
-            const {data,error} = await supabase.from('commands').update({description:Description})
+            const {error} = await supabase.from('commands').update({description:Description})
             .eq('id',command_id)
             if(error) throw new Error(error.message)
             return {status:201,message:'Command updated'}
@@ -286,7 +288,7 @@ export default class CommandsConfig{
     }
     static async updateCommandOptions(command_id,Options:string){
         try{
-            const {data,error} = await supabase.from('commands').update({options:Options})
+            const {error} = await supabase.from('commands').update({options:Options})
             .eq('id',command_id)
             if(error) throw new Error(error.message)
             return {status:201,message:'Command updated'}

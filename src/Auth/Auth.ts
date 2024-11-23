@@ -1,9 +1,9 @@
 
 import { commandLinks } from "../config/comandsLinks";
 import { GroupChat, Message } from "whatsapp-web.js";
-import CommandsConfig from "../DB/PostgreSQL/CommandConfig";
+import CommandsdataBase from "../DB/PostgreSQL/CommandConfig";
 import Commands from "../data/json/Commands.json" with { type: "json" };
-import { error } from "../data/typescript/Errors";
+import { error } from "../data/Objects/Errors";
 
 
 export async function Auth(command: string, message: Message) {
@@ -22,7 +22,7 @@ export async function Auth(command: string, message: Message) {
         //     throw new Error("Los comandos no estan disponibles en privado por el momento")
         // }   
         const group = <GroupChat>await message.getChat()
-        const data = await CommandsConfig.getCommandsConfig(chat.id._serialized, command.trimStart().trimEnd())
+        const data = await CommandsdataBase.getCommandsdataBase(chat.id._serialized, command.trimStart().trimEnd())
 
         if (data[command].g_enable === false && message.author !== '18292078938@c.us') throw new Error("el usuario Root ha deshabilitado este comando globalmente")
         else if (data[command].super_users[message.author]) {
