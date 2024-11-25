@@ -3,11 +3,12 @@ import Search from "./commands/search";
 import Tools from "./commands/tools";
 import Games from "./commands/games"; 
 import Configs from "./commands/configs";
-
+import Ai from "./commands/ai";
 export const CommandHandlle = {
     Media,
     Search,
     Tools,
     Games,
-    Configs
+    Configs,
+    Ai
  }

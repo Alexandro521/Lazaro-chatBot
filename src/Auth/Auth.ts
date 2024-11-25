@@ -14,16 +14,16 @@ export async function Auth(command: string, message: Message) {
           const chat = await message.getChat();
          const isGroup =chat.isGroup
         
-        if (Commands[command].is_only_groups && !isGroup)
-             {
-            throw new Error(error.Auth.onlyGroups.razon)
-        }
+
         // if (!isGroup){
         //     throw new Error("Los comandos no estan disponibles en privado por el momento")
         // }   
         const group = <GroupChat>await message.getChat()
         const data = await CommandsdataBase.getCommandsdataBase(chat.id._serialized, command.trimStart().trimEnd())
-
+        if (data[command].for_groups && !isGroup)
+            {
+           throw new Error(error.Auth.onlyGroups.razon)
+       }
         if (data[command].g_enable === false && message.author !== '18292078938@c.us') throw new Error("el usuario Root ha deshabilitado este comando globalmente")
         else if (data[command].super_users[message.author]) {
             await message.reply("tienes permitido usar este comando, razon: Super usuario", chat.id._serialized)

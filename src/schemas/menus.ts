@@ -13,9 +13,11 @@ Lista de Menus Disponibles:
 
 - 📜 *!menu4* -- 🛠️ Utilidades
 
-- 📜 *!menu5* -- 🔐Admintradores
+- 📜 *!menu5* -- 🔐 Inteligencia artificial
 
-- 📜 *!menu6* -- ⚙️ Configuración de Comandos
+- 📜 *!menu6* -- 🔐Admintradores
+
+- 📜 *!menu7* -- ⚙️ Configuración de Comandos
 
 *chrollo Bot v 1.0*
 
@@ -46,6 +48,8 @@ export const menu2 = `
 
 - 🎮 *!test_gay* -- 🔎 Eres Homosexual?
 
+- 🎮 *!Akinator* -- 🔎 Juega al juego de Akinator
+
 chrollo Bot v 1.0`;
 
 export const menu3 = `
@@ -68,7 +72,17 @@ export const menu4 = `
 - 🛠️ *!stk* --  Convertir una imagen a sticker
 
 chrollo Bot v 1.0`;
+
 export const menu5 = `
+*Lista de Comandos Disponibles:*
+
+- 📜 *!main* -- 🔎 Volver al Menu Principal
+
+- 👨‍👩‍👧‍👧 *!char* -- Hablar con personajes de character.ai
+
+chrollo Bot v 1.0`;
+
+export const menu6 = `
 *Lista de Comandos Disponibles:*
 
 - 📜 *!main* -- 🔎 Volver al Menu Principal
@@ -84,7 +98,7 @@ export const menu5 = `
 - 👁‍🗨 *!test* --  Prueba comandos experimentales
 
 chrollo Bot v 1.0`;
-export const menu6 = `
+export const menu7 = `
 *Lista de Comandos Disponibles:*
 
 - 📜 *!main* -- 🔎 Volver al Menu Principal

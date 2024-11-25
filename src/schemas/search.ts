@@ -44,4 +44,3 @@ export const youtubeResultsSchema = () => {
 _ _ _ _ _ _ _ _ _ _  _ _ _ _ _ _ _ _ _ _ _`,
   };
 };
-    

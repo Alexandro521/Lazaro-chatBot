@@ -95,14 +95,6 @@
 		"description": "descargar un video",
 		"options": "-info"
 	},
-	"!test": {
-		"id": "!test",
-		"is_only_groups": true,
-		"is_global_enable": true,
-		"only_admins": false,
-		"description": "not description",
-		"options": "-info"
-	},
 	"!wallpaper": {
 		"id": "!wallpaper",
 		"is_only_groups": false,
@@ -127,20 +119,44 @@
 		"description": "not description",
 		"options": "-info"
 	},
-	"!!only_Groups": {
-		"id": "!!only_Groups",
-		"is_only_groups": false,
-		"is_global_enable": true,
-		"only_admins": false,
-		"description": "not description",
-		"options": "-info"
-	},
 	"!main": {
 		"id": "!main",
 		"is_only_groups": false,
 		"is_global_enable": true,
 		"only_admins": false,
 		"description": "obten la lista de todos los comandos del bot",
+		"options": "-info"
+	},
+	"!only_Groups": {
+		"id": "!only_Groups",
+		"is_only_groups": false,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	},
+	"!test": {
+		"id": "!test",
+		"is_only_groups": false,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	},
+	"!char": {
+		"id": "!char",
+		"is_only_groups": false,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	},
+	"!akinator": {
+		"id": "!akinator",
+		"is_only_groups": false,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
 		"options": "-info"
 	},
 	"!G_enable": {

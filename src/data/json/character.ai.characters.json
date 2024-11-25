@@ -1,0 +1,28 @@
+{
+  "midudev":{
+    "name": "Midudev",
+    "id":"bby1o9VrVx5-5jVVWHMbhLDq4RqiMOqUMGgEEBFmGLU",
+    "voice_id":"641b8b72-f420-4889-bd13-1806dedb78e6"
+  },
+  "exNovia":{
+    "name": "Ex Novia",
+    "id":"omtfaI2-mSo1nESDL-_ECMwle9TC7I7vI2B5SNr4olw",
+    "voice_id":"9549bd8a-6a82-497d-8e6e-41e1de96555c"
+  },
+  "anaDeArmas":{
+    "name": "Ana de Armas",
+    "id":"JXnr9QZH5oSZ_Dhox-6YRJT0ywDAuLUyUCMbFDFjPXg",
+    "voice_id":"179d431b-55f8-46f5-a91c-3f38e19e3599"
+  },
+  "taylosSwift":{
+    "name": "Taylor Swift",
+    "id":"ra9L7jTP1fUAE1-8IhPSNyPrkTa5djGbx_EH-4Amwd4",
+    "voice_id":"d6f36f43-da35-42ad-8567-5202b64bc61d"
+  },
+  "goticGirlFriend":{
+    "name": "Gotic Girl Friend",
+    "id":"LPgBeY6mE8TNtR-nmOMAgOxbRYCqMjGSrShQRJx5uFo",
+    "voice_id":"4b6d4e23-83d2-4853-860d-5cc8849501b2"
+  }
+  
+}

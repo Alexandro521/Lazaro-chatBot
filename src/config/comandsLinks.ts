@@ -107,5 +107,15 @@ export const commandLinks = {
         init: async (Message: Message) => {
             await CommandHandlle.Configs.onlyGroups(Message)
         }
+    },
+    '!akinator': {
+        init: async (Message: Message) => {
+            await CommandHandlle.Games.Akinator(Message)
+        }
+    },
+    '!char': {
+        init: async (Message: Message) => {
+            await CommandHandlle.Ai.characterAi(Message)
+        }
     }
 }
