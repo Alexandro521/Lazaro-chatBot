@@ -2,6 +2,7 @@ import { Message, MessageMedia } from "whatsapp-web.js";
 import { messageInfo } from "../utils/menssageLog";
 import { commandExec } from "../Auth/ParseCommand";
 import { GameSession } from "../data/temp/temp";
+import { localCommand } from "./commands/localCommands";
 import { main, menu1, menu2, menu3, menu5, menu6, menu7 } from "../schemas/menus";
 export async function onMessageCreate(message: Message) {
   try {
@@ -62,6 +63,8 @@ export async function onMessageCreate(message: Message) {
       await message.reply(media,chatId, {
         caption: menu7,
       });
+    } else if (message.body === '!regist') {
+      await localCommand(message, chat)
     }
     else if (message.body.startsWith("!"))
       await commandExec(message.body, message);

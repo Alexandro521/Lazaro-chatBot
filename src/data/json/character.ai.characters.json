@@ -17,12 +17,51 @@
   "taylosSwift":{
     "name": "Taylor Swift",
     "id":"ra9L7jTP1fUAE1-8IhPSNyPrkTa5djGbx_EH-4Amwd4",
-    "voice_id":"d6f36f43-da35-42ad-8567-5202b64bc61d"
+    "voice_id":"9d2fb292-0711-40f5-83a3-68d7bbbd421b"
   },
   "goticGirlFriend":{
     "name": "Gotic Girl Friend",
     "id":"LPgBeY6mE8TNtR-nmOMAgOxbRYCqMjGSrShQRJx5uFo",
     "voice_id":"4b6d4e23-83d2-4853-860d-5cc8849501b2"
+  },
+  "ryomenSukuna":{
+    "name": "Ryomen Sukuna",
+    "id":"e4YGobLn_1SNmMxoDU0Pt25tYvGjV4Rm-LaoWQdkZts",
+    "voice_id":"01584343-f521-46d0-91bc-e985a65e7f22"
+  },
+  "choso":{
+    "name": "Choso",
+    "id":"HyRXJ5lwif6cxclcvAOSBFizmQEew4r88N-CI5mLxJ0",
+    "voice_id":"8eb1bc2f-353c-4758-80b0-7e8e4aff47ef"
+},
+  "stepSisters":{
+    "name": "Step Sisters",
+    "id":"BHiHAovXSKTzxswn0ANY5XWZPjhzTL3IHvk0JkzExTE",
+    "voice_id":"ac946a6b-d4ef-4c49-9f61-66811547138f"
+},
+  "satoruGojo":{
+    "name": "Satoru Gojo",
+    "id":"4WOVrCApi4JYwfYwU2e5eDeFalLOkGBw6IfUZPX1XVQ",
+    "voice_id":"19c53529-2717-4352-b51d-74ba7732da83"
+  },
+  "albertEinstein":{
+    "name": "Albert Einstein",
+    "id":"pQus24wbEGuwjRkJSWJGiYT4jA79HsrU5BMbekJB_lc",
+    "voice_id": "4e47f847-713a-43fb-8ed5-4e48d1b3ecdc"
+  },
+  "ghost":{
+    "name": "Ghost",
+    "id":"TlvNBISvMi_6FAklaaz-JtWFnyR_D0g4jDILr3ql3D0",
+    "voice_id":"aff3704a-1b61-4e40-9eae-23ed7456af91"
+  },
+  "luisAbinader":{
+    "name": "Luis Abinader",
+    "id":"vIo4lmSW6or4LJ0-3G3rkITaIH5kbJA2QWz4fG7GYCk",
+    "voice_id":"54989839-303d-4b45-9905-440c9ba21f9d"
+  },
+  "hipolitoMejia":{
+    "name": "Hipolito Mejia",
+    "id": "-NMeIyD-TvtKe5MJbZTEML_bvcis0eFiOCKxdbEMHV8",
+    "voice_id":"c76879a1-06d1-4f48-9d99-c11887f1b06d"
   }
-  
 }

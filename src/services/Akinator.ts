@@ -1,6 +1,6 @@
 import { AkinatorClient, Languages, Themes, Answers } from "node_akinator";
 import { Message, MessageMedia } from "whatsapp-web.js";
-import { GameSession } from "../../../data/temp/temp";
+import { GameSession } from "../data/temp/temp";
 
 //     const akinator = new AkinatorClient(
 //       Languages.Spanish,

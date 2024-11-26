@@ -297,5 +297,15 @@ export default class CommandsdataBase{
             return {status:500}
         }
     }
+    static async registerGroup(chat_id: string, is_group: boolean, chat_name) {
+        try {
+            const { error } = await supabase.from('whatsapp_chats').insert({ id:chat_id, is_group, chat_name })
+            if (error) throw new Error(error.message)
+            return { status: 201, message: 'Group added' }
+        } catch (err) { 
+            console.log(err)
+            return { status: 500 , message: 'Error'}
+        }
+     }
 }
 

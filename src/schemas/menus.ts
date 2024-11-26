@@ -120,3 +120,15 @@ export const menu7 = `
 - *!unsudo* -- 🔐 Eliminar Usuarios de la Lista de Superusuarios
 
 chrollo Bot v 1.0`;
+
+export const menusIndex = {
+    
+    "!main": main,
+    "!menu1": menu1,
+    "!menu2": menu2,
+    "!menu3": menu3,
+    "!menu4": menu4,
+    "!menu5": menu5,
+    "!menu6": menu6,
+    "!menu7": menu7
+}

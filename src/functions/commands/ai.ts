@@ -4,19 +4,13 @@ import { Message, MessageMedia} from "whatsapp-web.js";
 import { characterAI_Client } from "../../services/character.ai";
 import { characterSession } from "../../data/temp/temp";
 import character from "../../data/json/character.ai.characters.json" with { type: "json" };
-import { characterSchema } from "../../schemas/character.ai";
+import { characterSchema,characters } from "../../schemas/character.ai";
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export default class Ai { 
     static async characterAi(message: Message) {
         try {
           let query = null
-          const characters = {
-            "1": "midudev",
-            "2": "exNovia",
-            "3": "anaDeArmas",
-            "4": "taylosSwift",
-            "5": "goticGirlFriend"
-          }
+
           const test = /:change\s+(\d+)\s+(.+)/.test(message.body)
           if (!characterSession[message.author]) {
             

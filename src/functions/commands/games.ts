@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 import { GroupChat, Message, MessageMedia } from "whatsapp-web.js";
 import fs from "fs";
-import { NewGame } from "./games/Akinator";
+import { NewGame } from "../../services/Akinator";
 import { Themes } from "node_akinator";
 export default class Games{
     static async testGay(message: Message) {
