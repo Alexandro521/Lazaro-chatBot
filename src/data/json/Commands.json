@@ -159,6 +159,22 @@
 		"description": "not description",
 		"options": "-info"
 	},
+	"!level": {
+		"id": "!level",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	},
+	"!G_only_Admins": {
+		"id": "!G_only_Admins",
+		"is_only_groups": true,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "habilita o deshabilita un comando a nivel global para todos los grupos",
+		"options": "-info"
+	},
 	"!G_enable": {
 		"id": "!G_enable",
 		"is_only_groups": true,
@@ -197,14 +213,6 @@
 		"is_global_enable": true,
 		"only_admins": false,
 		"description": "Obten la configuracion actual de un comando para este grupo",
-		"options": "-info"
-	},
-	"!G_only_Admins": {
-		"id": "!G_only_Admins",
-		"is_only_groups": true,
-		"is_global_enable": true,
-		"only_admins": true,
-		"description": "habilita o deshabilita un comando a nivel global para todos los grupos",
 		"options": "-info"
 	}
 }

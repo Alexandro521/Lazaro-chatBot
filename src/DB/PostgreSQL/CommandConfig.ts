@@ -14,6 +14,7 @@ const API_KEY = process.env.publicAnonKey
 const URL = process.env.DbUrl
 const supabase = createClient(URL, API_KEY);
 
+
 export default class CommandsdataBase{
     
     static async getBannedUsersList(chat_id:string,command_id:string){

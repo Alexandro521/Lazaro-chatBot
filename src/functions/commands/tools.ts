@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { Message} from "whatsapp-web.js";
-
+import { Message, MessageMedia} from "whatsapp-web.js";
+import { leaderTableUserData,leaderTableGenerator } from "../../services/level_System/leaderTableGenerator";
 export default class Tools {
   static async stickerCreate(message: Message) {
     try {
@@ -28,12 +28,14 @@ export default class Tools {
     }
   static async test(message: Message) {
     try {
-      await message.reply("No hay funciones experimentales para el momento")
+
+      const data = await leaderTableUserData(message)
+      const base64 = await leaderTableGenerator(data)
+      const media = new MessageMedia("image/png", base64)
+      message.reply(media)
      } catch (error) {
       await message.reply(error.message)
       console.log(error)
     }
   }
-
-
 }

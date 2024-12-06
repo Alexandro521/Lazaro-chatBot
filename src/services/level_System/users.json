@@ -1,0 +1,425 @@
+{
+	"51983219572@c.us_120363121493410769@g.us": {
+		"id": 234,
+		"user_id": "51983219572@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 177,
+		"level": 5,
+		"required_exp": 305,
+		"messages_count": 0
+	},
+	"51964927580@c.us_120363121493410769@g.us": {
+		"id": 228,
+		"user_id": "51964927580@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 114,
+		"level": 4,
+		"required_exp": 165,
+		"messages_count": 0
+	},
+	"51912601739@c.us_120363121493410769@g.us": {
+		"id": 220,
+		"user_id": "51912601739@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 108,
+		"level": 4,
+		"required_exp": 165,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363298345116281@g.us": {
+		"id": 205,
+		"user_id": "18292078938@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 103,
+		"level": 4,
+		"required_exp": 165,
+		"messages_count": 0
+	},
+	"51992232493@c.us_120363121493410769@g.us": {
+		"id": 209,
+		"user_id": "51992232493@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 63,
+		"level": 3,
+		"required_exp": 83,
+		"messages_count": 0
+	},
+	"584127817443@c.us_120363300220879042@g.us": {
+		"id": 218,
+		"user_id": "584127817443@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 45,
+		"level": 3,
+		"required_exp": 83,
+		"messages_count": 0
+	},
+	"573167450378@c.us_120363298345116281@g.us": {
+		"id": 204,
+		"user_id": "573167450378@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 44,
+		"level": 3,
+		"required_exp": 83,
+		"messages_count": 0
+	},
+	"51930326559@c.us_120363298345116281@g.us": {
+		"id": 214,
+		"user_id": "51930326559@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 41,
+		"level": 3,
+		"required_exp": 83,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363367896357822@g.us": {
+		"id": 210,
+		"user_id": "18292078938@c.us",
+		"chat": "120363367896357822@g.us",
+		"experience": 36,
+		"level": 3,
+		"required_exp": 83,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363121493410769@g.us": {
+		"id": 225,
+		"user_id": "18292078938@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 32,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"51994266065@c.us_120363300220879042@g.us": {
+		"id": 221,
+		"user_id": "51994266065@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 28,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363183730817172@g.us": {
+		"id": 232,
+		"user_id": "18292078938@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 20,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"5218139805239@c.us_120363298345116281@g.us": {
+		"id": 246,
+		"user_id": "5218139805239@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 18,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"584127818474@c.us_120363300220879042@g.us": {
+		"id": 219,
+		"user_id": "584127818474@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 12,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363351609626889@g.us": {
+		"id": 211,
+		"user_id": "18292078938@c.us",
+		"chat": "120363351609626889@g.us",
+		"experience": 12,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"584247079098@c.us_120363183730817172@g.us": {
+		"id": 238,
+		"user_id": "584247079098@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 11,
+		"level": 2,
+		"required_exp": 35,
+		"messages_count": 0
+	},
+	"51994266065@c.us_120363183730817172@g.us": {
+		"id": 233,
+		"user_id": "51994266065@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 6,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"573248810172@c.us_120363183730817172@g.us": {
+		"id": 241,
+		"user_id": "573248810172@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 6,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51919652440@c.us_120363121493410769@g.us": {
+		"id": 247,
+		"user_id": "51919652440@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 6,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"593994087173@c.us_120363183730817172@g.us": {
+		"id": 242,
+		"user_id": "593994087173@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 5,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51937717841@c.us_120363121493410769@g.us": {
+		"id": 249,
+		"user_id": "51937717841@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 4,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"18292078938@c.us_120363300220879042@g.us": {
+		"id": 229,
+		"user_id": "18292078938@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 4,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51933783388@c.us_120363121493410769@g.us": {
+		"id": 250,
+		"user_id": "51933783388@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 4,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"5215642737498@c.us_120363298345116281@g.us": {
+		"id": 239,
+		"user_id": "5215642737498@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 3,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51904559724@c.us_120363121493410769@g.us": {
+		"id": 236,
+		"user_id": "51904559724@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"573001125149@c.us_120363298345116281@g.us": {
+		"id": 243,
+		"user_id": "573001125149@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"5218139805239@c.us_120363300220879042@g.us": {
+		"id": 217,
+		"user_id": "5218139805239@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"5493541515860@c.us_120363351609626889@g.us": {
+		"id": 255,
+		"user_id": "5493541515860@c.us",
+		"chat": "120363351609626889@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"584127817443@c.us_120363298345116281@g.us": {
+		"id": 212,
+		"user_id": "584127817443@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51977577690@c.us_120363300220879042@g.us": {
+		"id": 227,
+		"user_id": "51977577690@c.us",
+		"chat": "120363300220879042@g.us",
+		"experience": 2,
+		"level": 1,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51994266065@c.us_120363298345116281@g.us": {
+		"id": 215,
+		"user_id": "51994266065@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 1,
+		"level": 0,
+		"required_exp": 10,
+		"messages_count": 0
+	},
+	"51946017174@c.us_120363121493410769@g.us": {
+		"id": 245,
+		"user_id": "51946017174@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"584247079098@c.us_status@broadcast": {
+		"id": 237,
+		"user_id": "584247079098@c.us",
+		"chat": "status@broadcast",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"51901064562@c.us_120363183730817172@g.us": {
+		"id": 240,
+		"user_id": "51901064562@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"18292078938@c.us_51927376609@c.us": {
+		"id": 216,
+		"user_id": "18292078938@c.us",
+		"chat": "51927376609@c.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"584127817443@c.us_120363351609626889@g.us": {
+		"id": 213,
+		"user_id": "584127817443@c.us",
+		"chat": "120363351609626889@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"18496385958@c.us_status@broadcast": {
+		"id": 231,
+		"user_id": "18496385958@c.us",
+		"chat": "status@broadcast",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"573167450378@c.us_120363183730817172@g.us": {
+		"id": 226,
+		"user_id": "573167450378@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"51934629301@c.us_120363183730817172@g.us": {
+		"id": 230,
+		"user_id": "51934629301@c.us",
+		"chat": "120363183730817172@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"18292078938@c.us_18095203765@c.us": {
+		"id": 251,
+		"user_id": "18292078938@c.us",
+		"chat": "18095203765@c.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"584247079098@c.us_120363278792621715@g.us": {
+		"id": 244,
+		"user_id": "584247079098@c.us",
+		"chat": "120363278792621715@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"5493541515860@c.us_120363298345116281@g.us": {
+		"id": 254,
+		"user_id": "5493541515860@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"51904217929@c.us_120363298345116281@g.us": {
+		"id": 253,
+		"user_id": "51904217929@c.us",
+		"chat": "120363298345116281@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"18099098691@c.us_status@broadcast": {
+		"id": 252,
+		"user_id": "18099098691@c.us",
+		"chat": "status@broadcast",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"573103821222@c.us_120363298788632365@g.us": {
+		"id": 208,
+		"user_id": "573103821222@c.us",
+		"chat": "120363298788632365@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"51912262007@c.us_120363121493410769@g.us": {
+		"id": 235,
+		"user_id": "51912262007@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	},
+	"51960180679@c.us_120363121493410769@g.us": {
+		"id": 248,
+		"user_id": "51960180679@c.us",
+		"chat": "120363121493410769@g.us",
+		"experience": 0,
+		"level": 0,
+		"required_exp": 0,
+		"messages_count": 0
+	}
+}

@@ -117,5 +117,10 @@ export const commandLinks = {
         init: async (Message: Message) => {
             await CommandHandlle.Ai.characterAi(Message)
         }
-    }
+    },
+    '!level': {
+        init: async (Message: Message) => {
+            await CommandHandlle.User.level(Message)
+        }
+    },
 }

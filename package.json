@@ -20,22 +20,18 @@
     "axios": "^1.7.7",
     "cainode": "^1.1.8",
     "chalk": "4.1.2",
-    "free-translate": "^0.6.1",
+    "discord-card-canvas": "^2.0.0",
     "millify": "^6.1.0",
     "node_akinator": "^1.0.3",
     "node_characterai": "^1.2.7",
     "qrcode-terminal": "^0.12.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.15.0",
-    "whatsapp-web.js": "^1.26.0",
-    "ytdl-core": "^4.11.5",
-    "ytsr": "^3.8.4"
+    "whatsapp-web.js": "^1.26.0"
   },
   "devDependencies": {
     "@types/bun": "^1.1.13",
     "eslint": "^9.15.0",
-    "globals": "^15.12.0",
-    "nodemon": "^3.1.7",
-    "standard": "^17.1.2"
+    "globals": "^15.12.0"
   }
 }

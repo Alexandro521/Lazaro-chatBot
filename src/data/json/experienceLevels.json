@@ -1,0 +1,777 @@
+{
+    "levels": {
+        "1": {
+            "name": "Nivel 1",
+            "achievement": "¡Bienvenido al camino del conocimiento! Has alcanzado el Nivel 1.",
+            "requiredXP": 10,
+            "rol": "novato",
+            "level": 1,
+            "missions": [
+                {
+                    "task": "Explora la plataforma",
+                    "reward": "50 XP"
+                },
+                {
+                    "task": "Completa tu perfil",
+                    "reward": "100 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso básico"
+            ],
+            "rewards": {
+                "coins": 50,
+                "boosts": []
+            }
+        },
+        "2": {
+            "name": "Nivel 2",
+            "achievement": "¡Tu esfuerzo rinde frutos! Ahora eres Nivel 2.",
+            "requiredXP": 35,
+            "rol": "novato",
+            "level": 2,
+            "missions": [
+                {
+                    "task": "Logra una racha de 2 días seguidos",
+                    "reward": "75 XP"
+                },
+                {
+                    "task": "Interacciona con 2 usuarios",
+                    "reward": "50 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Personalizar perfil"
+            ],
+            "rewards": {
+                "coins": 75,
+                "boosts": [
+                    "Velocidad x1.5"
+                ]
+            }
+        },
+        "3": {
+            "name": "Nivel 3",
+            "achievement": "¡Increíble! Has llegado al Nivel 3. Sigue así.",
+            "requiredXP": 83,
+            "rol": "novato",
+            "level": 3,
+            "missions": [
+                {
+                    "task": "Completa 5 tareas en total",
+                    "reward": "100 XP"
+                },
+                {
+                    "task": "Publica una reseña",
+                    "reward": "50 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a estadísticas"
+            ],
+            "rewards": {
+                "coins": 100,
+                "boosts": [
+                    "Velocidad x2"
+                ]
+            }
+        },
+        "4": {
+            "name": "Nivel 4",
+            "achievement": "¡Vas viento en popa! Nivel 4 desbloqueado.",
+            "requiredXP": 165,
+            "rol": "aprendiz",
+            "level": 4,
+            "missions": [
+                {
+                    "task": "Participa en 5 interacciones grupales",
+                    "reward": "150 XP"
+                },
+                {
+                    "task": "Comparte un enlace",
+                    "reward": "75 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a grupos avanzados"
+            ],
+            "rewards": {
+                "coins": 125,
+                "boosts": []
+            }
+        },
+        "5": {
+            "name": "Nivel 5",
+            "achievement": "¡Felicidades! Eres un aprendiz oficial en el Nivel 5.",
+            "requiredXP": 305,
+            "rol": "aprendiz",
+            "level": 5,
+            "missions": [
+                {
+                    "task": "Ayuda a un novato",
+                    "reward": "200 XP"
+                },
+                {
+                    "task": "Crea 3 publicaciones",
+                    "reward": "100 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Crear contenido"
+            ],
+            "rewards": {
+                "coins": 150,
+                "boosts": [
+                    "Velocidad x2.5"
+                ]
+            }
+        },
+        "6": {
+            "name": "Nivel 6",
+            "achievement": "¡Buen trabajo! Has alcanzado el Nivel 6.",
+            "requiredXP": 580,
+            "rol": "aprendiz",
+            "level": 6,
+            "missions": [
+                {
+                    "task": "Participa en un evento grupal",
+                    "reward": "150 XP"
+                },
+                {
+                    "task": "Completa 7 tareas diarias",
+                    "reward": "200 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a eventos"
+            ],
+            "rewards": {
+                "coins": 200,
+                "boosts": []
+            }
+        },
+        "7": {
+            "name": "Nivel 7",
+            "achievement": "¡Eres imparable! Nivel 7 desbloqueado.",
+            "requiredXP": 820,
+            "rol": "experto",
+            "level": 7,
+            "missions": [
+                {
+                    "task": "Alcanza una racha de 5 días seguidos",
+                    "reward": "300 XP"
+                },
+                {
+                    "task": "Interacciona con 5 usuarios nuevos",
+                    "reward": "150 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a herramientas avanzadas"
+            ],
+            "rewards": {
+                "coins": 250,
+                "boosts": [
+                    "Velocidad x3"
+                ]
+            }
+        },
+        "8": {
+            "name": "Nivel 8",
+            "achievement": "¡Estás en la cima del aprendizaje! Nivel 8 completado.",
+            "requiredXP": 1180,
+            "rol": "experto",
+            "level": 8,
+            "missions": [
+                {
+                    "task": "Organiza un evento",
+                    "reward": "400 XP"
+                },
+                {
+                    "task": "Completa 10 interacciones positivas",
+                    "reward": "200 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Moderación de contenido"
+            ],
+            "rewards": {
+                "coins": 300,
+                "boosts": []
+            }
+        },
+        "9": {
+            "name": "Nivel 9",
+            "achievement": "¡Tu influencia crece! Bienvenido al Nivel 9.",
+            "requiredXP": 11370,
+            "rol": "experto",
+            "level": 9,
+            "missions": [
+                {
+                    "task": "Publica contenido destacado",
+                    "reward": "500 XP"
+                },
+                {
+                    "task": "Completa una colaboración grupal",
+                    "reward": "300 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a contenido exclusivo"
+            ],
+            "rewards": {
+                "coins": 350,
+                "boosts": [
+                    "Velocidad x3.5"
+                ]
+            }
+        },
+        "10": {
+            "name": "Nivel 10",
+            "achievement": "¡Felicitaciones! Has alcanzado un hito: Nivel 10.",
+            "requiredXP": 1405,
+            "rol": "maestro",
+            "level": 10,
+            "missions": [
+                {
+                    "task": "Ayuda a 3 usuarios nuevos",
+                    "reward": "600 XP"
+                },
+                {
+                    "task": "Comparte una estrategia innovadora",
+                    "reward": "400 XP"
+                }
+            ],
+            "unlocks": [
+                "Rol de mentor"
+            ],
+            "rewards": {
+                "coins": 400,
+                "boosts": [
+                    "Velocidad x4"
+                ]
+            }
+        },
+        "11": {
+            "name": "Nivel 11",
+            "achievement": "¡Maestro en progreso! Has alcanzado el Nivel 11.",
+            "requiredXP": 2008,
+            "rol": "maestro",
+            "level": 11,
+            "missions": [
+                {
+                    "task": "Organiza una sesión grupal",
+                    "reward": "700 XP"
+                },
+                {
+                    "task": "Completa 20 tareas en total",
+                    "reward": "300 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a panel de estadísticas avanzado"
+            ],
+            "rewards": {
+                "coins": 450,
+                "boosts": []
+            }
+        },
+        "12": {
+            "name": "Nivel 12",
+            "achievement": "¡Impresionante! Ya estás en el Nivel 12.",
+            "requiredXP": 2312,
+            "rol": "maestro",
+            "level": 12,
+            "missions": [
+                {
+                    "task": "Participa en una conferencia",
+                    "reward": "800 XP"
+                },
+                {
+                    "task": "Comparte un tutorial detallado",
+                    "reward": "400 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Crear tutoriales"
+            ],
+            "rewards": {
+                "coins": 500,
+                "boosts": [
+                    "Velocidad x4.5"
+                ]
+            }
+        },
+        "13": {
+            "name": "Nivel 13",
+            "achievement": "¡Tu conocimiento es inspirador! Nivel 13 alcanzado.",
+            "requiredXP": 1368,
+            "rol": "maestro",
+            "level": 13,
+            "missions": [
+                {
+                    "task": "Completa 10 reseñas de calidad",
+                    "reward": "900 XP"
+                },
+                {
+                    "task": "Participa en 5 debates",
+                    "reward": "450 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a foros exclusivos"
+            ],
+            "rewards": {
+                "coins": 550,
+                "boosts": []
+            }
+        },
+        "14": {
+            "name": "Nivel 14",
+            "achievement": "¡Estás alcanzando alturas impresionantes! Nivel 14.",
+            "requiredXP": 2052,
+            "rol": "mentor",
+            "level": 14,
+            "missions": [
+                {
+                    "task": "Crea una serie de publicaciones",
+                    "reward": "1000 XP"
+                },
+                {
+                    "task": "Colabora en 3 proyectos grupales",
+                    "reward": "500 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Administrar proyectos"
+            ],
+            "rewards": {
+                "coins": 600,
+                "boosts": [
+                    "Velocidad x5"
+                ]
+            }
+        },
+        "15": {
+            "name": "Nivel 15",
+            "achievement": "¡El camino al éxito es tuyo! Has alcanzado el Nivel 15.",
+            "requiredXP": 3078,
+            "rol": "mentor",
+            "level": 15,
+            "missions": [
+                {
+                    "task": "Organiza un taller",
+                    "reward": "1200 XP"
+                },
+                {
+                    "task": "Logra 50 interacciones positivas",
+                    "reward": "600 XP"
+                }
+            ],
+            "unlocks": [
+                "Rol de entrenador"
+            ],
+            "rewards": {
+                "coins": 700,
+                "boosts": [
+                    "Velocidad x5.5"
+                ]
+            }
+        },
+        "16": {
+            "name": "Nivel 16",
+            "achievement": "¡El conocimiento fluye a través de ti! Nivel 16 desbloqueado.",
+            "requiredXP": 4617,
+            "rol": "mentor",
+            "level": 16,
+            "missions": [
+                {
+                    "task": "Imparte 3 charlas",
+                    "reward": "1300 XP"
+                },
+                {
+                    "task": "Participa en 5 colaboraciones de alto nivel",
+                    "reward": "700 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a redes avanzadas"
+            ],
+            "rewards": {
+                "coins": 800,
+                "boosts": []
+            }
+        },
+        "17": {
+            "name": "Nivel 17",
+            "achievement": "¡Tu liderazgo es evidente! Bienvenido al Nivel 17.",
+            "requiredXP": 6925,
+            "rol": "mentor",
+            "level": 17,
+            "missions": [
+                {
+                    "task": "Modera una discusión compleja",
+                    "reward": "1400 XP"
+                },
+                {
+                    "task": "Completa 15 interacciones destacadas",
+                    "reward": "800 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Liderar equipos"
+            ],
+            "rewards": {
+                "coins": 900,
+                "boosts": [
+                    "Velocidad x6"
+                ]
+            }
+        },
+        "18": {
+            "name": "Nivel 18",
+            "achievement": "¡Has alcanzado la excelencia! Nivel 18 completado.",
+            "requiredXP": 10387,
+            "rol": "visionario",
+            "level": 18,
+            "missions": [
+                {
+                    "task": "Coordina un evento internacional",
+                    "reward": "1500 XP"
+                },
+                {
+                    "task": "Crea un contenido viral",
+                    "reward": "900 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Influencia global"
+            ],
+            "rewards": {
+                "coins": 1000,
+                "boosts": []
+            }
+        },
+        "19": {
+            "name": "Nivel 19",
+            "achievement": "¡Tu impacto es global! Nivel 19 desbloqueado.",
+            "requiredXP": 15580,
+            "rol": "visionario",
+            "level": 19,
+            "missions": [
+                {
+                    "task": "Publica 5 artículos destacados",
+                    "reward": "1600 XP"
+                },
+                {
+                    "task": "Alcanza una racha de 20 días",
+                    "reward": "1000 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a mentorías personalizadas"
+            ],
+            "rewards": {
+                "coins": 1100,
+                "boosts": [
+                    "Velocidad x6.5"
+                ]
+            }
+        },
+        "20": {
+            "name": "Nivel 20",
+            "achievement": "¡Eres un líder visionario! Has alcanzado el Nivel 20.",
+            "requiredXP": 23370,
+            "rol": "líder",
+            "level": 20,
+            "missions": [
+                {
+                    "task": "Organiza un seminario masivo",
+                    "reward": "1700 XP"
+                },
+                {
+                    "task": "Completa 100 interacciones positivas",
+                    "reward": "1200 XP"
+                }
+            ],
+            "unlocks": [
+                "Rol de estratega global"
+            ],
+            "rewards": {
+                "coins": 1200,
+                "boosts": [
+                    "Velocidad x7"
+                ]
+            }
+        },
+        "21": {
+            "name": "Nivel 21",
+            "achievement": "¡Un nuevo hito alcanzado! Nivel 21 logrado.",
+            "requiredXP": 35055,
+            "rol": "líder",
+            "level": 21,
+            "missions": [
+                {
+                    "task": "Crea un programa educativo",
+                    "reward": "1800 XP"
+                },
+                {
+                    "task": "Ayuda a 50 usuarios nuevos",
+                    "reward": "1300 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Transformación social"
+            ],
+            "rewards": {
+                "coins": 1300,
+                "boosts": []
+            }
+        },
+        "22": {
+            "name": "Nivel 22",
+            "achievement": "¡Tu legado está creciendo! Nivel 22 alcanzado.",
+            "requiredXP": 52582,
+            "rol": "líder",
+            "level": 22,
+            "missions": [
+                {
+                    "task": "Realiza una colaboración internacional",
+                    "reward": "1900 XP"
+                },
+                {
+                    "task": "Participa en 10 foros avanzados",
+                    "reward": "1500 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a foros globales"
+            ],
+            "rewards": {
+                "coins": 1400,
+                "boosts": [
+                    "Velocidad x7.5"
+                ]
+            }
+        },
+        "23": {
+            "name": "Nivel 23",
+            "achievement": "¡Eres una inspiración! Nivel 23 desbloqueado.",
+            "requiredXP": 78873,
+            "rol": "visionario global",
+            "level": 23,
+            "missions": [
+                {
+                    "task": "Crea un manifiesto de impacto global",
+                    "reward": "2000 XP"
+                },
+                {
+                    "task": "Realiza 20 interacciones destacadas",
+                    "reward": "1600 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Red de contactos internacional"
+            ],
+            "rewards": {
+                "coins": 1500,
+                "boosts": []
+            }
+        },
+        "24": {
+            "name": "Nivel 24",
+            "achievement": "¡El cambio global es palpable! Nivel 24 logrado.",
+            "requiredXP": 118309,
+            "rol": "visionario global",
+            "level": 24,
+            "missions": [
+                {
+                    "task": "Lidera un proyecto global",
+                    "reward": "2500 XP"
+                },
+                {
+                    "task": "Completa 50 interacciones positivas",
+                    "reward": "1700 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a recursos globales"
+            ],
+            "rewards": {
+                "coins": 1600,
+                "boosts": [
+                    "Velocidad x8"
+                ]
+            }
+        },
+        "25": {
+            "name": "Nivel 25",
+            "achievement": "¡Eres un arquitecto del cambio! Nivel 25 alcanzado.",
+            "requiredXP": 177463,
+            "rol": "estratega global",
+            "level": 25,
+            "missions": [
+                {
+                    "task": "Organiza una cumbre global",
+                    "reward": "3000 XP"
+                },
+                {
+                    "task": "Logra 200 interacciones positivas",
+                    "reward": "1800 XP"
+                }
+            ],
+            "unlocks": [
+                "Rol de embajador global"
+            ],
+            "rewards": {
+                "coins": 1800,
+                "boosts": []
+            }
+        },
+        "26": {
+            "name": "Nivel 26",
+            "achievement": "¡Tu visión es legendaria! Nivel 26 desbloqueado.",
+            "requiredXP": 266194,
+            "rol": "embajador global",
+            "level": 26,
+            "missions": [
+                {
+                    "task": "Imparte 10 conferencias internacionales",
+                    "reward": "3200 XP"
+                },
+                {
+                    "task": "Completa 100 tareas avanzadas",
+                    "reward": "1900 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a comunidad exclusiva"
+            ],
+            "rewards": {
+                "coins": 2000,
+                "boosts": [
+                    "Velocidad x8.5"
+                ]
+            }
+        },
+        "27": {
+            "name": "Nivel 27",
+            "achievement": "¡Eres un modelo a seguir mundial! Nivel 27 completado.",
+            "requiredXP": 399291,
+            "rol": "embajador global",
+            "level": 27,
+            "missions": [
+                {
+                    "task": "Crea un sistema de impacto social",
+                    "reward": "3500 XP"
+                },
+                {
+                    "task": "Publica 10 contenidos destacados",
+                    "reward": "2000 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Estrategia global avanzada"
+            ],
+            "rewards": {
+                "coins": 2200,
+                "boosts": []
+            }
+        },
+        "28": {
+            "name": "Nivel 28",
+            "achievement": "¡Te has convertido en una figura legendaria! Nivel 28 logrado.",
+            "requiredXP": 598936,
+            "rol": "líder legendario",
+            "level": 28,
+            "missions": [
+                {
+                    "task": "Colabora con 5 figuras globales",
+                    "reward": "4000 XP"
+                },
+                {
+                    "task": "Alcanza una racha de 50 días",
+                    "reward": "2200 XP"
+                }
+            ],
+            "unlocks": [
+                "Acceso a foros legendarios"
+            ],
+            "rewards": {
+                "coins": 2400,
+                "boosts": [
+                    "Velocidad x9"
+                ]
+            }
+        },
+        "29": {
+            "name": "Nivel 29",
+            "achievement": "¡El mundo reconoce tu grandeza! Nivel 29 completado.",
+            "requiredXP": 898404,
+            "rol": "líder legendario",
+            "level": 29,
+            "missions": [
+                {
+                    "task": "Lidera un cambio global",
+                    "reward": "4500 XP"
+                },
+                {
+                    "task": "Alcanza 300 interacciones positivas",
+                    "reward": "2500 XP"
+                }
+            ],
+            "unlocks": [
+                "Habilidad: Liderazgo legendario"
+            ],
+            "rewards": {
+                "coins": 2600,
+                "boosts": []
+            }
+        },
+        "30": {
+            "name": "Nivel 30",
+            "achievement": "¡Eres una leyenda inmortal! Nivel 30 completado.",
+            "requiredXP": 1230743,
+            "rol": "dios",
+            "level": 30,
+            "missions": [
+                {
+                    "task": "Realiza 100 interacciones",
+                    "reward": "500 XP"
+                },
+                {
+                    "task": "Logra una racha de 30 días",
+                    "reward": "1000 XP"
+                }
+            ],
+            "unlocks": [
+                "Modo experto",
+                "Habilidad: Creación de contenido"
+            ],
+            "rewards": {
+                "coins": 5000,
+                "boosts": [
+                    "Velocidad x3",
+                    "Multiplicador de XP"
+                ]
+            }
+        }
+    },
+    "milestones": [
+        {
+            "level": 10,
+            "bonusXP": 500,
+            "reward": "Medalla de Bronce"
+        },
+        {
+            "level": 20,
+            "bonusXP": 1000,
+            "reward": "Medalla de Plata"
+        },
+        {
+            "level": 30,
+            "bonusXP": 2000,
+            "reward": "Medalla de Oro"
+        }
+    ]
+}

@@ -1,4 +1,3 @@
-import { VariableDeclaration } from "typescript"
 
 export type errType ={
     syntax: errTypeprops

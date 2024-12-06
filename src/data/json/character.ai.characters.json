@@ -63,5 +63,20 @@
     "name": "Hipolito Mejia",
     "id": "-NMeIyD-TvtKe5MJbZTEML_bvcis0eFiOCKxdbEMHV8",
     "voice_id":"c76879a1-06d1-4f48-9d99-c11887f1b06d"
+  },
+  "messi":{
+    "name":"leo messi",
+    "id":"-qTFCNDgSZwrMslkS-JqgDBCIi8WnfrRJ5K_ycCceHg",
+    "voice_id":"fe229a6c-17e7-4384-bfc9-1b381d849114"
+  },
+  "cristianoRonaldo":{
+    "name":"Cristiano Ronaldo",
+    "id":"4LfPxahhCP18hBSCiBAxwK0U9fu1KTw9StsYjAp1o7w",
+    "voice_id":"3ed8dd9c-83c2-493b-a096-93ff46ed4e6b"
+  },
+  "elizabethOlzen":{
+    "name":"Elizabeth Olzen",
+    "id":"7OCPhbpVcgOSs-5CDa4o94VRdhMYP05-KMso_oKtBXs",
+    "voice_id":"a4a46a6c-750b-4746-91f7-e85aaf08b0bd"
   }
 }

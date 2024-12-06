@@ -1,4 +1,6 @@
 import { Themes } from "node_akinator";
+import { experience } from "../../services/level_System/levelSystem";
+import { userExperience } from "../../DB/PostgreSQL/CommandConfig";
 
 export const tiktokLinksTemp:tiktokLinksTempType = {
 
@@ -6,15 +8,38 @@ export const tiktokLinksTemp:tiktokLinksTempType = {
 export const youtubeLinskTemp: youtubeLinskTempType = {
 
 }
-
 export const GameSession: GameSessionType = {
 
     
 }
-
 export const characterSession: characterSessionType = {
     
 }
+export const ExperienceSlots:experienceSlotsType = {
+
+}
+export const experieceRankSlots: experieceRankSlotsType = {
+
+}
+
+type experieceRankSlotsType = {
+    [key: string]: {
+        table: RanktableType[]
+    }
+}
+
+type RanktableType = {
+    user_id: string
+    experience: number
+}
+
+export type experienceSlotsType = {
+    [key: string]: {
+        client: experience,
+        data: userExperience
+    }
+}
+
 
 type GameSessionType = {
     [key: string]: {

@@ -41,7 +41,7 @@ export default class Ai {
             query = msg
             if (!cha) throw new Error("personaje no encontrado")
        
-            await message.reply('personaje cambiado a ' + cha)
+            await message.reply('personaje cambiado a ' + character[cha].name)
             await characterSession[message.author].char.change(character[cha].id,character[cha].voice_id)
           }
           else {

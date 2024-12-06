@@ -19,6 +19,8 @@ Lista de Menus Disponibles:
 
 - 📜 *!menu7* -- ⚙️ Configuración de Comandos
 
+- 📜 *!menu8* -- 🙍‍♂️ Usuario
+
 *chrollo Bot v 1.0*
 
 `;
@@ -121,6 +123,14 @@ export const menu7 = `
 
 chrollo Bot v 1.0`;
 
+export const menu8 = `
+*Lista de Comandos Disponibles:*
+
+- 📜 *!main* -- 🔎 Volver al Menu Principal
+
+- 🙍‍♂️ *!level* -- 🔎 Obtener nivel de usuario
+
+chrollo Bot v 1.0`;
 export const menusIndex = {
     
     "!main": main,
@@ -130,5 +140,6 @@ export const menusIndex = {
     "!menu4": menu4,
     "!menu5": menu5,
     "!menu6": menu6,
-    "!menu7": menu7
+    "!menu7": menu7,
+    "!menu8": menu8
 }

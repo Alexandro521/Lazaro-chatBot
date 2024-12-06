@@ -23,18 +23,33 @@ _!char :change 1 hola mundo_
     id   |  personaje
    ---- |---------
 - [1] | Midudev
+
 - [2] | Ex Novia
+
 - [3] | Ana de Armas
+
 - [4] | Taylor Swift
+
 - [5] | Gotic Girl Friend
+
 - [6] | Choso (jujutsu kaisen)
+
 - [7] | Ryomen Sukuna (jujutsu kaisen)
+
 - [8] | Step Sisters
+
 - [9] | Satoru Gojo
+
 - [10] | Albert Einstein
+
 - [11] | Ghost
-- [12] | Luis Abinader
-- [13] | Hipolito Mejia
+
+- [12] | Messi
+
+- [13] | Cristiano Ronaldo
+
+- [14] | Elizabeth Olzen
+
 
 _si tu personaje preferido no esta en la lista, puedes enviar un mensaje a @18292078938 para que sea agregado_
 `
@@ -42,7 +57,7 @@ _si tu personaje preferido no esta en la lista, puedes enviar un mensaje a @1829
 export const characters = {
     "1": "midudev",
     "2": "exNovia",
-    "3": "anaDeArmas",
+    "3": "anaDeArmas", 
     "4": "taylosSwift",
     "5": "goticGirlFriend",
     "6": "choso",
@@ -51,6 +66,7 @@ export const characters = {
     "9": "satoruGojo",
     "10": "albertEinstein",
     "11": "ghost",
-    "12": "luisAbinader",
-    "13": "hipolitoMejia"
+    "12": "messi",
+    "13": "cristianoRonaldo",
+    "14": "elizabethOlzen"
   }
