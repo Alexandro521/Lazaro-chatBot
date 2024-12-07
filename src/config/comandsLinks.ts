@@ -123,4 +123,9 @@ export const commandLinks = {
             await CommandHandlle.User.level(Message)
         }
     },
+    '!rank': {
+        init: async (Message: Message) => {
+            await CommandHandlle.User.rank(Message)
+        }
+    },
 }

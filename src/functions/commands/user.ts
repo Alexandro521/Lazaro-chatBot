@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { Message} from "whatsapp-web.js";
+
 import { level_session } from "../../services/level_System/session";
-//import { leaderTableUserData,leaderTableGenerator } from "../../services/level_System/leaderTableGenerator";
+import { Message, MessageMedia} from "whatsapp-web.js";
+import { leaderTableUserData,leaderTableGenerator } from "../../services/level_System/leaderTableGenerator";
+
+
 export default class User {
 
   static async level(message: Message) {
@@ -14,6 +17,17 @@ export default class User {
         await session.client.sendLevelCard(message,false)
       }
    
+     } catch (error) {
+      await message.reply(error.message)
+      console.log(error)
+    }
+  }
+  static async rank(message: Message) {
+    try {
+      const data = await leaderTableUserData(message)
+      const base64 = await leaderTableGenerator(data)
+      const media = new MessageMedia("image/png", base64)
+      message.reply(media)
      } catch (error) {
       await message.reply(error.message)
       console.log(error)

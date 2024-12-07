@@ -175,6 +175,14 @@
 		"description": "habilita o deshabilita un comando a nivel global para todos los grupos",
 		"options": "-info"
 	},
+	"!rank": {
+		"id": "!rank",
+		"is_only_groups": false,
+		"is_global_enable": true,
+		"only_admins": false,
+		"description": "not description",
+		"options": "-info"
+	},
 	"!G_enable": {
 		"id": "!G_enable",
 		"is_only_groups": true,

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { Message, MessageMedia} from "whatsapp-web.js";
-import { leaderTableUserData,leaderTableGenerator } from "../../services/level_System/leaderTableGenerator";
+import { Message} from "whatsapp-web.js";
+import {  archivement } from "../../services/level_System/Archivement_system/Archivement";
+
 export default class Tools {
   static async stickerCreate(message: Message) {
     try {
@@ -28,11 +29,10 @@ export default class Tools {
     }
   static async test(message: Message) {
     try {
-
-      const data = await leaderTableUserData(message)
-      const base64 = await leaderTableGenerator(data)
-      const media = new MessageMedia("image/png", base64)
-      message.reply(media)
+      const chat = await message.getChat();
+      const Archivement = new archivement(message.author,chat.id._serialized,'50 niveles','50 niveles',50,50,()=>true,'')
+      await Archivement.sync()
+      await message.reply("test ejecutadp")
      } catch (error) {
       await message.reply(error.message)
       console.log(error)

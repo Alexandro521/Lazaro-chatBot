@@ -33,7 +33,7 @@ export class Level extends level_db {
         }
     }
     async addExperience(exp: number, message: Message) {
-        console.log("aqui fallamos")
+    
         this.experience += exp
         if (this.experience >= this.needExperience) {
             await this.levelUp(message)
@@ -42,7 +42,7 @@ export class Level extends level_db {
         await super.updateUserExperience(this.experience,this.level,this.needExperience)
     }
     private async levelUp(message: Message) {
-        console.log("aqui fallamos level up")
+
         this.level += 1
         this.needExperience = experieceLevel.levels[this.level].requiredXP
         await super.updateUserExperience(this.experience,this.level,this.needExperience)

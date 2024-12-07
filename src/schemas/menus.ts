@@ -130,6 +130,8 @@ export const menu8 = `
 
 - 🙍‍♂️ *!level* -- 🔎 Obtener nivel de usuario
 
+- 📊 *!rank* -- 🔎 Obtener Lista de ranking de usuarios del grupo
+
 chrollo Bot v 1.0`;
 export const menusIndex = {
     
