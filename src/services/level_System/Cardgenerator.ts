@@ -1,5 +1,5 @@
 export const getUserLevelCard = async (userDaata: UserLevelCard) => {
-    const data = await fetch('http://localhost:3000/api/card', {
+    const data = await fetch('https://whatsappjs-cards-gen-api-production.up.railway.app/api/card', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
