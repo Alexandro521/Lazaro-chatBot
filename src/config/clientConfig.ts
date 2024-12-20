@@ -3,7 +3,7 @@ import { LocalAuth, ClientOptions } from "whatsapp-web.js";
 export const clientConfig: ClientOptions = {
   //ffmpegPath: "C:\\PATH_Programs-ytdpl\\ffmpeg.exe",
   
- /* puppeteer: {
+   puppeteer: {
   //  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     headless: false,
     args: [
@@ -15,7 +15,7 @@ export const clientConfig: ClientOptions = {
       "--no-zygote",
       "--disable-gpu",
     ],
-  },*/
+  },
   webVersionCache: {
     type: "remote",
     remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/v2.2410.1.html`,
