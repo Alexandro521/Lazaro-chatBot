@@ -5,7 +5,7 @@ export const clientConfig: ClientOptions = {
   
    puppeteer: {
   //  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    headless: false,
+    headless: true,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
