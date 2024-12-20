@@ -36,7 +36,8 @@ async function getProfilePicUrl(user_id: string) {
     }
 }
 export async function leaderTableGenerator(data: requestBodytype): Promise<string> {
-    const request = await fetch('http://localhost:3000/api/top', {
+    const URL = "https://whatsappjs-cards-gen-api-production.up.railway.app/api/top"
+    const request = await fetch(URL /*'http://localhost:3000/api/top'*/, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
