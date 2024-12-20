@@ -4,8 +4,8 @@ export const clientConfig: ClientOptions = {
   //ffmpegPath: "C:\\PATH_Programs-ytdpl\\ffmpeg.exe",
   
   puppeteer: {
-    executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    headless: true,
+  //  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    headless: false,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
