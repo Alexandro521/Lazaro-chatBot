@@ -54,7 +54,7 @@ export default class Media {
       await message.reply(`Descargando y enviando mp3 de *${title}*...`);
       const Title = parseTitle(title)
       const ouput =
-        await $`${process.cwd()}/bin/ytdlp/yt-dlp.exe -o "${Title}.%(ext)s" -f 139 -x --audio-format mp3 -P ${process.cwd()}/static/audio ${url}`.text();
+        await $`${process.cwd()}/bin/ytdlp/yt-dlp.exe -o "${Title}.%(ext)s" -f 233 -x --audio-format mp3 -P ${process.cwd()}/static/audio ${url}`.text();
         console.log(ouput);
         
       // message.reply(JSON.stringify(files, null, "\t"))
@@ -81,7 +81,7 @@ export default class Media {
       );
       const Title = parseTitle(title)
       const ouput =
-        await $`${process.cwd()}/bin/ytdlp/yt-dlp.exe -S "res:720" -o "${Title}.%(ext)s" -P ${process.cwd()}/static/video ${url}`.text();
+        await $`${process.cwd()}/bin/ytdlp/yt-dlp.exe -S "res:720" -o "${Title}.%(ext)s" -P ${process.cwd()}/static/video  -f  136  ${url}`.text();
         console.log(ouput);
         
       // message.reply(JSON.stringify(files, null, "\t"))

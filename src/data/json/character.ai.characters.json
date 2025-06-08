@@ -16,7 +16,7 @@
   },
   "taylosSwift":{
     "name": "Taylor Swift",
-    "id":"ra9L7jTP1fUAE1-8IhPSNyPrkTa5djGbx_EH-4Amwd4",
+    "id":"Km4-kL8r3rrmG5zbjNqUBxZnfkXxsIeSXg5kZZFvKKI",
     "voice_id":"9d2fb292-0711-40f5-83a3-68d7bbbd421b"
   },
   "goticGirlFriend":{
@@ -78,5 +78,10 @@
     "name":"Elizabeth Olzen",
     "id":"7OCPhbpVcgOSs-5CDa4o94VRdhMYP05-KMso_oKtBXs",
     "voice_id":"a4a46a6c-750b-4746-91f7-e85aaf08b0bd"
+  },
+  "sabrinaCarpenter":{
+    "name":"Sabrina Carpenter",
+    "id":"VEnyuj_fwJAUX7U-lhr5y7CM1bFVplr8l7r6sax2m40",
+    "voice_id":"7fe7e5ed-9986-4097-aca0-8b95520d57db"
   }
 }

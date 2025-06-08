@@ -1,4 +1,4 @@
-const ApiIndexRoute = `https://deliriussapi-oficial.vercel.app`;
+const ApiIndexRoute = `https://delirius-apiofc.vercel.app/`;
 export const ApiUrl = {
   Search: {
     genius: `${ApiIndexRoute}/search/genius?q=`,

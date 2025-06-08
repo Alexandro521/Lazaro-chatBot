@@ -50,6 +50,8 @@ _!char :change 1 hola mundo_
 
 - [14] | Elizabeth Olzen
 
+- [15] | Sabrina Carpenter
+
 
 _si tu personaje preferido no esta en la lista, puedes enviar un mensaje a @18292078938 para que sea agregado_
 `
@@ -68,5 +70,6 @@ export const characters = {
     "11": "ghost",
     "12": "messi",
     "13": "cristianoRonaldo",
-    "14": "elizabethOlzen"
+    "14": "elizabethOlzen",
+    "15": "sabrinaCarpenter"
   }

@@ -14,24 +14,24 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@eslint/js": "^9.15.0",
-    "@supabase/supabase-js": "^2.46.1",
-    "@types/eslint__js": "^8.42.3",
-    "axios": "^1.7.7",
-    "cainode": "^1.1.8",
-    "chalk": "4.1.2",
-    "discord-card-canvas": "^2.0.0",
+    "@eslint/js": "^9.25.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "@types/eslint__js": "^9.14.0",
+    "axios": "^1.9.0",
+    "cainode": "^1.2.2",
+    "chalk": "5.4.1",
+    "discord-card-canvas": "^2.0.1",
     "millify": "^6.1.0",
     "node_akinator": "^1.0.3",
     "node_characterai": "^1.2.7",
     "qrcode-terminal": "^0.12.0",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.15.0",
-    "whatsapp-web.js": "^1.26.0"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0",
+    "whatsapp-web.js": "^1.27.0"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.13",
-    "eslint": "^9.15.0",
-    "globals": "^15.12.0"
+    "@types/bun": "^1.2.10",
+    "eslint": "^9.25.1",
+    "globals": "^15.15.0"
   }
 }
